@@ -452,7 +452,7 @@ var loadPlate = function(style, number) {
 
   // Coloreyes: Load number image
   var oReq = new XMLHttpRequest();
-  oReq.open("GET", "http://localhost:3000/numbers/"+number+".png", true);
+  oReq.open("GET", "http://localhost:3000/numbers/"+number+".png", true);// TODO: Change URL once deployed
   oReq.responseType = "arraybuffer";
   oReq.onload = function(oEvent) {
     var blob = new Blob([oReq.response], {type: "image/png"});
@@ -474,7 +474,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // 'Protanomaly': 4, 'Viewable by all': 5, 'Colorblind only': 6
   var someStyle = getRandomInt(0, 7);
   var someNum = getRandomInt(1, 10);
-  loadPlate(someStyle, 5); // ColorEyes: harcoded to 5 for now!!
+  loadPlate(someStyle, 5); // TODO: harcoded to 5 for now!!
 });
 
 
