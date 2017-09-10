@@ -4,7 +4,7 @@ class Plates extends Component {
   constructor(args) {
     super(args);
     this.state = {
-      plateImageSrc: "/images/5.png"
+      //plateImageSrc: "/images/5.png"
     }
   }
 
@@ -14,7 +14,7 @@ class Plates extends Component {
       <p>Questions Component</p>
       <canvas id="canvas">Your browser does not support canvas.</canvas>
       </div>
-      );
+    );
   }
 }
 
