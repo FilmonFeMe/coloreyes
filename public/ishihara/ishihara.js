@@ -213,7 +213,7 @@ StarFactory.prototype.generate = function(circular_area) {
   return polygons;
 };
 
-var loadPlates = function(style, number) {
+var loadPlate = function(style, number) {
 
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
@@ -240,15 +240,15 @@ var loadPlates = function(style, number) {
     circular: true,
     resize: true,
     invert_colors: false,
-    style: style,//parameter
+    style: style,// Coloreyes: parameter
     speed: 1000,
-    min_radius: (canvas.width + canvas.height) / 600, //7.6
-    max_radius: (canvas.width + canvas.height) / 150,//38
+    min_radius: (canvas.width + canvas.height) / 600,
+    max_radius: (canvas.width + canvas.height) / 150,
     draw_ratio: 0.96,
     stop_after: 2000,
     shape_factory: 'Circle',
-    sides: 4,//not used
-    pointiness: 0.75,//not used
+    sides: 4,// Coloreyes: not used
+    pointiness: 0.75,// Coloreyes: not used
     generate: function() {
       generating = true;
 
@@ -326,9 +326,6 @@ var loadPlates = function(style, number) {
 
         if (failed_in_row >= ishihara_input.stop_after) {
           generating = false;
-          // hide_gui_element('generate', false);
-          // hide_gui_element('clear', false);
-          // hide_gui_element('stop', true);
         } else {
           requestAnimationFrame(step);
         }
@@ -343,9 +340,6 @@ var loadPlates = function(style, number) {
       img_ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
   };
-
-  var gui = new dat.GUI();
-  gui.add(ishihara_input, 'generate').name("Generate");
 
   var colors_on = [
     ['#F9BB82', '#EBA170', '#FCCD84'],
@@ -370,7 +364,7 @@ var loadPlates = function(style, number) {
   var generating = false;
   //var x, y;
 
-  // Commented hand drawing features
+  // Coloreyes: Commented hand drawing features
   // var hand_draw = function(ctx, style, x1, y1, x2, y2) {
   //   if (x2 && y2) {
   //     ctx.beginPath();
@@ -426,44 +420,14 @@ var loadPlates = function(style, number) {
   //   y = curr_y;
   // });
 
-  // image_upload.addEventListener('change', function(e) {
-  //   var reader = new FileReader();
-  //   reader.onload = function(event) {
-  //     var img = new Image();
-  //     img.src = event.target.result;
-  //     img.onload = function() {
-  //       if (ishihara_input.resize) {
-  //         var ratio = Math.min(max_width / img.width, max_height / img.height);
-  //         canvas.width  = img.width  * ratio;
-  //         canvas.height = img.height * ratio;
-  //       } else {
-  //         canvas.width = img.width;
-  //         canvas.height = img.height;
-  //       }
-  //       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-  //       img_canvas.width = canvas.width;
-  //       img_canvas.height = canvas.height;
-  //       img_ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-  //     };
-  //   };
-  //   reader.readAsDataURL(e.target.files[0]);
-
-  //       var oReq = new XMLHttpRequest();
-  //       oReq.open("GET", "http://localhost:3000/numbers/5.png", true);
-  //       oReq.responseType = "arraybuffer";
-  //       oReq.onload = function(oEvent) {
-  //         var blob = new Blob([oReq.response], {type: "image/png"});
-  //         load_number_file(blob);
-  //       };
-  //       oReq.send();
-  // }, false);
 
   var load_number_file = function(file) {
     var reader = new FileReader();
+
     reader.onload = function(event) {
       var img = new Image();
       img.src = event.target.result;
+
       img.onload = function() {
         if (ishihara_input.resize) {
           var ratio = Math.min(max_width / img.width, max_height / img.height);
@@ -478,20 +442,21 @@ var loadPlates = function(style, number) {
         img_canvas.width = canvas.width;
         img_canvas.height = canvas.height;
         img_ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+        // Coloreyes: Call generate the plate only after fully loading the number image
+        ishihara_input.generate();
       };
     };
     reader.readAsDataURL(file);
   };
 
-  // LOAD NUMBRE IMAGE
-
+  // Coloreyes: Load number image
   var oReq = new XMLHttpRequest();
-  oReq.open("GET", "http://localhost:3000/numbers/5.png", true);
+  oReq.open("GET", "http://localhost:3000/numbers/"+number+".png", true);// TODO: Change URL once deployed
   oReq.responseType = "arraybuffer";
   oReq.onload = function(oEvent) {
     var blob = new Blob([oReq.response], {type: "image/png"});
     load_number_file(blob);
-    ishihara_input.generate();
   };
   oReq.send();
 
@@ -504,11 +469,12 @@ function getRandomInt(min, max) {
 };
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Coloreyes:
   // 'General 1': 0, 'General 2': 1, 'General 3': 2, 'Protanopia': 3,
   // 'Protanomaly': 4, 'Viewable by all': 5, 'Colorblind only': 6
   var someStyle = getRandomInt(0, 7);
   var someNum = getRandomInt(1, 10);
-  loadPlates(someStyle, someNum);
+  loadPlate(someStyle, 5); // TODO: harcoded to 5 for now!!
 });
 
 
