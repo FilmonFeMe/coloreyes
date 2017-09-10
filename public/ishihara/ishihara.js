@@ -326,9 +326,6 @@ var loadPlate = function(style, number) {
 
         if (failed_in_row >= ishihara_input.stop_after) {
           generating = false;
-          // hide_gui_element('generate', false);
-          // hide_gui_element('clear', false);
-          // hide_gui_element('stop', true);
         } else {
           requestAnimationFrame(step);
         }
