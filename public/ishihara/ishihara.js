@@ -472,11 +472,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Coloreyes:
   // 'General 1': 0, 'General 2': 1, 'General 3': 2, 'Protanopia': 3,
   // 'Protanomaly': 4, 'Viewable by all': 5, 'Colorblind only': 6
-  
+
   var someStyle = getRandomInt(0, 7);
   var someNum = getRandomInt(1, 10);
-  
-  loadPlate(someStyle, 5); // TODO: harcoded to 5 for now!!
-});
 
-alert("Here");
+  loadPlate(someStyle, someNum);
+});
