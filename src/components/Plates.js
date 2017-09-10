@@ -11,8 +11,7 @@ class Plates extends Component {
   render(){
     return (
       <div>
-      <p>Questions Component</p>
-      <canvas id="canvas">Your browser does not support canvas.</canvas>
+        <canvas id="canvas">Your browser does not support canvas.</canvas>
       </div>
     );
   }
