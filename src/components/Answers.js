@@ -15,7 +15,7 @@ class Answers extends Component {
       <div className ="answer-form">
         <label>Select an option: </label><br/><br/>
         <ul className="options">
-          {[1,2,3,4,5,6,7,8,9].map((i) =>
+          {[1,4,7,2,5,8,3,6,9].map((i) =>
             <li key={i}>
               <input type="radio" id={"radio"+i} value={i} onChange={this.handleChange}/>
               <label htmlFor={"radio"+i}>{i}</label>
