@@ -35,8 +35,13 @@ class Quiz extends Component {
   }
 
   render() {
-    const question = this.questions[this.state.answers.length];
-
+    let currentQuestion = this.state.answers.length
+    if (currentQuestion >= this.questions.length) {
+      return(
+        <div>Quiz completed.</div>
+        )
+    }
+    const question = this.  questions[currentQuestion];
     return (
       <div>
        <Instruction />
