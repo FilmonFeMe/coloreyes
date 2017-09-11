@@ -17,13 +17,12 @@ class Plates extends Component {
     }
 
     updateCanvas() {
-        loadPlate(this.refs.canvas, 1, this.props.questionId);
+        loadPlate(this.refs.canvas, this.props.testType, this.props.number);
     }
 
 
     // loadPlate(this.props.questionId);
   render(){
-    console.log('question id', this.props.questionId)
     return (
       <div>
         <canvas ref="canvas" id="canvas">Your browser does not support canvas.</canvas>

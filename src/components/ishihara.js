@@ -418,21 +418,4 @@ var loadPlate = function(canvasToUse, style, number) {
 
 };
 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-};
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Coloreyes:
-  // 'General 1': 0, 'General 2': 1, 'General 3': 2, 'Protanopia': 3,
-  // 'Protanomaly': 4, 'Viewable by all': 5, 'Colorblind only': 6
-
-  var someStyle = getRandomInt(0, 7);
-  var someNum = getRandomInt(1, 10);
-
-  // loadPlate(someStyle, someNum);
-});
-
 export default loadPlate;
