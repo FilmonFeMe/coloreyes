@@ -1,4 +1,11 @@
+import Polygon from './jspolygon';
+
+var kdTreeModule = require('./kdTree.js');
+var kdTree = kdTreeModule.kdTree;
+
 'use strict';
+
+var canvas;
 
 function CircleFactory(options) {
   this.options = options;
@@ -213,9 +220,11 @@ StarFactory.prototype.generate = function(circular_area) {
   return polygons;
 };
 
-var loadPlate = function(style, number) {
+var loadPlate = function(canvasToUse, style, number) {
+  canvas = canvasToUse;
 
-  var canvas = document.getElementById('canvas');
+  console.log(canvas)
+
   var ctx = canvas.getContext('2d');
 
   var max_width  = window.innerWidth;
@@ -478,3 +487,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // loadPlate(someStyle, someNum);
 });
+
+export default loadPlate;
