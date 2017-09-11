@@ -18,7 +18,7 @@ class Quiz extends Component {
     // be part of the test.
     // TODO(aazevedo): make sure we cover all the styles at least once
     this.questions = [];
-    for (var i = 0; i < props.numberOfQuestions; ++i) {
+    for (let i = 0; i < props.numberOfQuestions; ++i) {
       this.questions.push(
         {testType: getRandomInt(0, 7), number: getRandomInt(1, 9)});
     }
@@ -34,17 +34,26 @@ class Quiz extends Component {
     this.setState({ answers: this.state.answers });
   }
 
+  computeResults() {
+    let numCorrect = 0;
+    this.questions.forEach((question, i) => {
+      numCorrect += question.number == this.state.answers[i] ? 1 : 0;
+    });
+    return numCorrect;
+  }
+
   render() {
-    let currentQuestion = this.state.answers.length
+    const currentQuestion = this.state.answers.length;
     if (currentQuestion >= this.questions.length) {
       return(
-        <div>Quiz completed.</div>
-        )
+        <Results numCorrect={this.computeResults()} numberOfQuestions={this.questions.length}/>
+        );
     }
-    const question = this.  questions[currentQuestion];
+    const question = this.questions[currentQuestion];
     return (
       <div>
        <Instruction />
+       <div> Plate {currentQuestion + 1} of {this.questions.length} </div>
        <Plates testType={question.testType} number={question.number} />
        <Answers onAnswerClicked = { this.onAnswerClicked } />
        <Results />
