@@ -6,16 +6,11 @@ import registerServiceWorker from './registerServiceWorker';
 import Navbar from './components/Navbar.js';
 import Header from './components/Header.js';
 import Home from './components/Home.js';
-import Quiz from './components/Quiz.js';
+import Instruction from './components/Instruction.js';
 import AboutUs from './components/AboutUs.js';
 import ContactForm from './components/ContactForm.js';
 import ColorBlindnessView from './components/ColorBlindnessView.js';
-
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-
-const OtherComponent = () => (
- <div>Other component is rendered as well</div>
-)
 
 const root = document.getElementById('root');
 
@@ -24,10 +19,11 @@ ReactDOM.render(
     <div>
       <Navbar></Navbar>
       <hr/>
-      <Header>ColorEyes</Header>
+      <Header></Header>
       <Route exact path="/" component={Home}/>
       {/*<Route exact path="/" component={OtherComponent}/>*/}
 
+      <Route path="/instructions" component={Instruction}/>
       <Route path="/quiz" component={App}/>
       <Route path="/about-us" component={AboutUs}/>
       <Route path="/contact-us" component={ContactForm}/>

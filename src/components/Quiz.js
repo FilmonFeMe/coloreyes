@@ -57,7 +57,6 @@ class Quiz extends Component {
     const question = this.questions[currentQuestion];
     return (
       <div>
-       <Instruction />
        <div> Plate {currentQuestion + 1} of {this.questions.length} </div>
        <Plates testType={question.testType} number={question.number} />
        <Answers onAnswerClicked = { this.onAnswerClicked } />
