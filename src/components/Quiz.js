@@ -18,7 +18,7 @@ class Quiz extends Component {
     // be part of the test.
     // TODO(aazevedo): make sure we cover all the styles at least once
     this.questions = [];
-    for (var i = 0; i < 10; ++i) {
+    for (var i = 0; i < props.numberOfQuestions; ++i) {
       this.questions.push(
         {testType: getRandomInt(0, 7), number: getRandomInt(1, 9)});
     }

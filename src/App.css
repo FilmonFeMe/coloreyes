@@ -6,11 +6,7 @@ body {
  font-family: calibri;
 }
 
-input[type=radio] {
-    display:none;
-  }
-
-input[type=radio] + label {
+input[type=button] {
     display:inline-block;
     margin: 5px;
     padding: 4px 12px;
@@ -27,7 +23,7 @@ input[type=radio] + label {
     border-color: #e6e6e6 #e6e6e6 #bfbfbf;
   }
 
-   input[type=radio]:checked + label {
+   input[type=button]:active {
     background-image: none;
     outline: 0;
     background-color:#e0e0e0;
@@ -47,11 +43,6 @@ input[type=radio] + label {
 .answer-form {
   width: 200px;
   margin: auto;
-}
-
-#radio-pass-label {
-  width: 50%;
-  align-items: center;
 }
 
 
