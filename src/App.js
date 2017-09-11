@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-	       <Quiz numberOfQuestions={3}/>
+	       <Quiz numberOfQuestions={17}/>
       </div>
     );
   }
