@@ -24,7 +24,7 @@ ReactDOM.render(
     <div>
       <Navbar></Navbar>
       <hr/>
-      <Header>ColorEyes</Header>
+      <Header></Header>
       <Route exact path="/" component={Home}/>
       {/*<Route exact path="/" component={OtherComponent}/>*/}
 
