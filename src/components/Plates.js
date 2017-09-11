@@ -6,22 +6,22 @@ class Plates extends Component {
     super(args);
     this.state = {
       //plateImageSrc: "/images/5.png"
-
     }
   }
-      componentDidMount() {
-        this.updateCanvas();
-    }
-        componentDidUpdate() {
-        this.updateCanvas();
-    }
 
-    updateCanvas() {
-        loadPlate(this.refs.canvas, this.props.testType, this.props.number);
-    }
+  componentDidMount() {
+    this.updateCanvas();
+  }
 
+  componentDidUpdate() {
+    this.updateCanvas();
+  }
 
-    // loadPlate(this.props.questionId);
+  updateCanvas() {
+    loadPlate(this.refs.canvas, this.props.testType, this.props.number);
+  }
+
+  // loadPlate(this.props.questionId);
   render(){
     return (
       <div>
