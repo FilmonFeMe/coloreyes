@@ -5,6 +5,7 @@ import NavComponent from './components/Navbar.js';
 import ReactForm from './components/ContactForm.js';
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">

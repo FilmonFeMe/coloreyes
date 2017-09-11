@@ -1,4 +1,11 @@
+import Polygon from './jspolygon';
+
+var kdTreeModule = require('./kdTree.js');
+var kdTree = kdTreeModule.kdTree;
+
 'use strict';
+
+var canvas;
 
 function CircleFactory(options) {
   this.options = options;
@@ -213,9 +220,14 @@ StarFactory.prototype.generate = function(circular_area) {
   return polygons;
 };
 
-var loadPlate = function(style, number) {
 
-  var canvas = document.getElementById('canvas');
+var generating = false;
+
+var loadPlate = function(canvasToUse, style, number) {
+  generating = false;
+
+  canvas = canvasToUse;
+
   var ctx = canvas.getContext('2d');
 
   var max_width  = window.innerWidth;
@@ -324,7 +336,10 @@ var loadPlate = function(style, number) {
           }
         }
 
-        if (failed_in_row >= ishihara_input.stop_after) {
+        if (!generating || failed_in_row >= ishihara_input.stop_after) {
+          // we get here if either
+          // - we canceled OR
+          // - we finished the animation
           generating = false;
         } else {
           requestAnimationFrame(step);
@@ -361,65 +376,6 @@ var loadPlate = function(style, number) {
   ];
 
   var painting = false;
-  var generating = false;
-  //var x, y;
-
-  // Coloreyes: Commented hand drawing features
-  // var hand_draw = function(ctx, style, x1, y1, x2, y2) {
-  //   if (x2 && y2) {
-  //     ctx.beginPath();
-  //     ctx.strokeStyle = style;
-  //     ctx.moveTo(x1, y1);
-  //     ctx.lineWidth = 15;
-  //     ctx.lineTo(x2, y2);
-  //     ctx.stroke();
-  //   }
-  //   ctx.beginPath();
-  //   ctx.fillStyle = style;
-  //   ctx.arc(x1, y1, 7.5, 0, 2 * Math.PI);
-  //   ctx.fill();
-  //   ctx.closePath();
-  // };
-
-  // canvas.addEventListener('mousedown', function(e) {
-  //   if (e.button === 0) {
-  //     painting = true;
-
-  //     x = e.pageX - this.offsetLeft;
-  //     y = e.pageY - this.offsetTop;
-
-  //     if (generating) return;
-
-  //     hand_draw(ctx, e.ctrlKey ? '#FFF' : '#000', x, y)
-  //     hand_draw(img_ctx, e.ctrlKey ? '#FFF' : '#000', x, y)
-  //   }
-  // });
-
-  // canvas.addEventListener('mouseup', function(e) {
-  //   if (e.button === 0) {
-  //     painting = false;
-
-  //     x = e.pageX - this.offsetLeft;
-  //     y = e.pageY - this.offsetTop;
-
-  //     if (generating) return;
-
-  //     hand_draw(ctx, e.ctrlKey ? '#FFF' : '#000', x, y)
-  //     hand_draw(img_ctx, e.ctrlKey ? '#FFF' : '#000', x, y)
-  //   }
-  // });
-  // canvas.addEventListener('mousemove', function(e) {
-  //   if (!painting || generating) return;
-  //   var curr_x = e.pageX - this.offsetLeft;
-  //   var curr_y = e.pageY - this.offsetTop;
-
-  //   hand_draw(ctx, e.ctrlKey ? '#FFF' : '#000', curr_x, curr_y, x, y)
-  //   hand_draw(img_ctx, e.ctrlKey ? '#FFF' : '#000', curr_x, curr_y, x, y)
-
-  //   x = curr_x;
-  //   y = curr_y;
-  // });
-
 
   var load_number_file = function(file) {
     var reader = new FileReader();
@@ -462,19 +418,4 @@ var loadPlate = function(style, number) {
 
 };
 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-};
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Coloreyes:
-  // 'General 1': 0, 'General 2': 1, 'General 3': 2, 'Protanopia': 3,
-  // 'Protanomaly': 4, 'Viewable by all': 5, 'Colorblind only': 6
-
-  var someStyle = getRandomInt(0, 7);
-  var someNum = getRandomInt(1, 10);
-
-  loadPlate(someStyle, someNum);
-});
+export default loadPlate;
