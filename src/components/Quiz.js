@@ -10,24 +10,6 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 };
 
-var shuffleArray = function(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-  return array;
-};
-
 class Quiz extends Component {
   constructor(props) {
     super(props);
@@ -67,7 +49,7 @@ class Quiz extends Component {
 
   render() {
     const currentQuestion = this.state.answers.length;
-    if (currentQuestion >= this.questions.length) {
+    if(currentQuestion >= this.questions.length){
       return(
         <Results numCorrect={this.computeResults()} numberOfQuestions={this.questions.length}/>
         );
@@ -79,7 +61,6 @@ class Quiz extends Component {
        <div> Plate {currentQuestion + 1} of {this.questions.length} </div>
        <Plates testType={question.testType} number={question.number} />
        <Answers onAnswerClicked = { this.onAnswerClicked } />
-       <Results />
       </div>
       );
   }
