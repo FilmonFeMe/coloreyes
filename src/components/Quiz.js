@@ -48,7 +48,11 @@ class Quiz extends Component {
   }
 
   render() {
-    const currentQuestion = this.state.answers.length;
+    // console.log(currentQuestion + " " + this.state.answers)
+    let currentQuestion = this.state.answers.length;
+    if(currentQuestion == 1 && this.computeResults() == 0){
+      currentQuestion = 17;
+    }
     if(currentQuestion >= this.questions.length){
       return(
         <Results numCorrect={this.computeResults()} numberOfQuestions={this.questions.length}/>
@@ -57,7 +61,6 @@ class Quiz extends Component {
     const question = this.questions[currentQuestion];
     return (
       <div>
-       <Instruction />
        <div> Plate {currentQuestion + 1} of {this.questions.length} </div>
        <Plates testType={question.testType} number={question.number} />
        <Answers onAnswerClicked = { this.onAnswerClicked } />
