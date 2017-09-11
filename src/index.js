@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import Navbar from './components/Navbar.js';
 import Header from './components/Header.js';
 import Home from './components/Home.js';
-import Quiz from './components/Quiz.js';
+import Instruction from './components/Instruction.js';
 import AboutUs from './components/AboutUs.js';
 import ContactForm from './components/ContactForm.js';
 import ColorBlindnessView from './components/ColorBlindnessView.js';
@@ -28,6 +28,7 @@ ReactDOM.render(
       <Route exact path="/" component={Home}/>
       {/*<Route exact path="/" component={OtherComponent}/>*/}
 
+      <Route path="/instructions" component={Instruction}/>
       <Route path="/quiz" component={App}/>
       <Route path="/about-us" component={AboutUs}/>
       <Route path="/contact-us" component={ContactForm}/>

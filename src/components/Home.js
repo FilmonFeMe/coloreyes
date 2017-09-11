@@ -6,7 +6,7 @@ class Home extends Component {
     return (
       <div>
         <p>Welcome to our color blindness test!!!</p>
-        <Link to="/quiz"><button>Take the Test</button></Link>
+        <Link to="/instructions"><button>Take the Test</button></Link>
       </div>
     );
   }
