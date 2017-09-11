@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import Navbar from './components/Navbar.js';
+import Header from './components/Header.js';
 import Home from './components/Home.js';
 import AboutUs from './components/AboutUs.js';
 import ContactForm from './components/ContactForm.js';
@@ -21,9 +22,8 @@ ReactDOM.render(
 <Router>
     <div>
       <Navbar></Navbar>
-
       <hr/>
-
+      <Header>ColorEyes</Header>
       <Route exact path="/" component={Home}/>
       <Route exact path="/" component={OtherComponent}/>
       <Route path="/about-us" component={AboutUs}/>
