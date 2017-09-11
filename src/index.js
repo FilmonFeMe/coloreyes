@@ -11,8 +11,8 @@ import ColorBlindnessView from './components/ColorBlindnessView.js';
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
-const AppComponent = () => (
- <div>App component is rendered as well</div>
+const OtherComponent = () => (
+ <div>Other component is rendered as well</div>
 )
 
 const root = document.getElementById('root');
@@ -25,10 +25,10 @@ ReactDOM.render(
       <hr/>
 
       <Route exact path="/" component={Home}/>
-      <Route exact path="/" component={AppComponent}/>
+      <Route exact path="/" component={OtherComponent}/>
       <Route path="/about-us" component={AboutUs}/>
       <Route path="/contact-us" component={ContactForm}/>
-      <Route path="/cb-view" component={ColorBlindnessView}/>
+      <Route path="/color-view" component={ColorBlindnessView}/>
     </div>
   </Router>,
  root);

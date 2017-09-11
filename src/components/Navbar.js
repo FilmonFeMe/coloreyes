@@ -6,12 +6,10 @@ class NavComponent extends Component{
 	render() {
 		return (
 			<nav>
-	      <ul>
-	        <li><Link to="/">Home</Link></li>
-	        <li><Link to="/about-us">About Us</Link></li>
-	        <li><Link to="/contact-us">Contact Us</Link></li>
-	        <li><Link to="/cb-view">Color blindness view</Link></li>
-	      </ul>
+	      <Link to="/">Home</Link><span> | </span>
+	      <Link to="/about-us">About Us</Link><span> | </span>
+	      <Link to="/contact-us">Contact Us</Link><span> | </span>
+	      <Link to="/color-view">Color blindness view</Link>
 			</nav>
 		);
 	}
