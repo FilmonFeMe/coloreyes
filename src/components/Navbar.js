@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-// import './nav.scss';
+import { Link } from 'react-router-dom';
 
 class NavComponent extends Component{
 	render() {
 		return (
 			<nav>
-				<div className="nav-bar">
-					<a href="#">About Us</a> |
-					<a href="#">Contact Us</a> |
-					<a href="#">Color blindness View</a>
-				</div>
+	      <Link to="/">Home</Link><span> | </span>
+	      <Link to="/about-us">About Us</Link><span> | </span>
+	      <Link to="/contact-us">Contact Us</Link><span> | </span>
+	      <Link to="/color-view">Color blindness view</Link>
 			</nav>
 		);
 	}
