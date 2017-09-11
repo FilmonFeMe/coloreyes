@@ -5,12 +5,14 @@ import Answers from './Answers.js'
 import Results from './Results.js'
 
 class Quiz extends Component {
+
   render(){
+    console.log(this.props.questionId);
     return (
       <div>
        <Instruction />
-       <Plates />
-       <Answers />
+       <Plates questionId={this.props.questionId}/>
+       <Answers onAnswerClicked = { this.props.onAnswerClicked } />
        <Results />
       </div>
       );
