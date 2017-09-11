@@ -7,6 +7,7 @@ class Answers extends Component {
   }
 
   handleChange(event){
+    this.props.onAnswerClicked(event.target.value);
     console.log("Save answer and move to next plate! User selected: " + event.target.value);
   }
 
@@ -17,13 +18,11 @@ class Answers extends Component {
         <ul className="options">
           {[1,4,7,2,5,8,3,6,9].map((i) =>
             <li key={i}>
-              <input type="radio" id={"radio"+i} value={i} onChange={this.handleChange}/>
-              <label htmlFor={"radio"+i}>{i}</label>
+              <input type="button" id={"button"+i} value={i} onClick={this.handleChange}/>
             </li>
           )}
         </ul>
-        <input type="radio" id="radio-pass" value="pass" onChange={this.handleChange}/>
-        <label id="radio-pass-label" htmlFor="radio-pass">Pass</label>
+        <input type="button" id="button-pass" value="pass" onClick={this.handleChange}/>
       </div>
     );
   }

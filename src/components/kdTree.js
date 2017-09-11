@@ -10,13 +10,7 @@
  */
 
  (function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        define(['exports'], factory);
-    } else if (typeof exports === 'object') {
-        factory(exports);
-    } else {
-        factory((root.commonJsStrict = {}));
-    }
+   factory(exports);
 }(this, function (exports) {
   function Node(obj, dimension, parent) {
     this.obj = obj;
