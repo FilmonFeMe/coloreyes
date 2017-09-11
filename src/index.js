@@ -3,6 +3,36 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import Navbar from './components/Navbar.js';
+import Header from './components/Header.js';
+import Home from './components/Home.js';
+import Quiz from './components/Quiz.js';
+import AboutUs from './components/AboutUs.js';
+import ContactForm from './components/ContactForm.js';
+import ColorBlindnessView from './components/ColorBlindnessView.js';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+
+const OtherComponent = () => (
+ <div>Other component is rendered as well</div>
+)
+
+const root = document.getElementById('root');
+
+ReactDOM.render(
+<Router>
+    <div>
+      <Navbar></Navbar>
+      <hr/>
+      <Header>ColorEyes</Header>
+      <Route exact path="/" component={Home}/>
+      {/*<Route exact path="/" component={OtherComponent}/>*/}
+
+      <Route path="/quiz" component={App}/>
+      <Route path="/about-us" component={AboutUs}/>
+      <Route path="/contact-us" component={ContactForm}/>
+      <Route path="/color-view" component={ColorBlindnessView}/>
+    </div>
+  </Router>,
+ root);
 registerServiceWorker();
