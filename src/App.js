@@ -11,7 +11,7 @@ class App extends Component {
       <div className="App">
 	      <div><NavComponent/></div>
 	       <h1>ColorEyes</h1>
-	       <Quiz numberOfQuestions={3}/>
+	       <Quiz numberOfQuestions={5}/>
 	       <ReactForm/>
       </div>
     );

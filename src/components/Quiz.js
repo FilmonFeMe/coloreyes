@@ -10,6 +10,24 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 };
 
+var shuffleArray = function(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+};
+
 class Quiz extends Component {
   constructor(props) {
     super(props);
@@ -19,8 +37,13 @@ class Quiz extends Component {
     // TODO(aazevedo): make sure we cover all the styles at least once
     this.questions = [];
     for (let i = 0; i < props.numberOfQuestions; ++i) {
-      this.questions.push(
-        {testType: getRandomInt(0, 7), number: getRandomInt(1, 9)});
+      if(i === 0){
+        this.questions.push(
+          {testType: 5, number: getRandomInt(1, 9)});
+      }else{
+        this.questions.push(
+          {testType: getRandomInt(0, 7), number: getRandomInt(1, 9)});
+      }
     }
 
     this.state = {
