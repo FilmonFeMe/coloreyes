@@ -7,6 +7,7 @@ class Result extends Component {
   }
 
   render() {
+
     if (this.props.numCorrect == 0){
       return(
         <div htmlClass="results">
@@ -17,11 +18,12 @@ class Result extends Component {
     }
     else if ((this.props.numCorrect / this.props.numberOfQuestions) < .80) {
       return(
-      <div htmlClass="results">
+      <div className="results">
 
         <p>The answers provided indicate a difficulty interpreting red and green colors.  Red and/or green may appear as one color, or as grey.  Colors which contain hues of red or green may also be impacted.  For example, purple is a mixture of both red and blue; therefore, purple may appear indistinguishable from blue to someone affected by red-green colorblindness.</p>
         <p><strong>Disclaimer:</strong> The information provided by Filmon Mengisteab is not a substitute for professional medical advice, diagnosis, or treatment; it is intended only for general informational purposes.   If you have any concerns or questions about your health, you must consult with your physician or health-care professional.</p>
         <div>Correct answers: {this.props.numCorrect}/{this.props.numberOfQuestions}</div>
+        <div class="fb-share-button" data-href="https://secret-citadel-79719.herokuapp.com" data-layout="button" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsecret-citadel-79719.herokuapp.com%2F&amp;src=sdkpreparse"><img className="fb-share" src="images/fb_share2.jpeg" alt="Share"></img></a></div>
       </div>
       );
     }

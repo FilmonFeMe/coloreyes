@@ -10,7 +10,7 @@ import Instruction from './components/Instruction.js';
 import AboutUs from './components/AboutUs.js';
 import ContactForm from './components/ContactForm.js';
 import ColorBlindnessView from './components/ColorBlindnessView.js';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 const root = document.getElementById('root');
 
