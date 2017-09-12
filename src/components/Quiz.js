@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Instruction from './Instruction.js'
 import Plates from './Plates.js'
 import Answers from './Answers.js'
 import Results from './Results.js'
