@@ -49,3 +49,16 @@ input[type=button] {
   width: 80px;
 }
 
+#quiz-layout {
+  display: flex;
+}
+
+#numpad {
+  width: 40%;
+  align-items: center;
+  vertical-align: middle;
+}
+
+#plate {
+  flex: 1;
+}
