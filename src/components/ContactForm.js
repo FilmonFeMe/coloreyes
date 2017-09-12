@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
- import '../stylesheets/components/_form.scss';
+import '../stylesheets/components/_form.scss';
 
 const reactFormContainer = document.querySelector('.react-form-container');
 
@@ -36,15 +36,13 @@ class ReactForm extends Component {
   };
   
   handleSubmit = (e, message) => {
-    e.preventDefault();
-
     let formData = {
       formSender: this.state.name,
       formEmail: this.state.email,
       formSubject: this.state.subject,
       formMessage: this.state.message
     }
-    
+    console.log(formData);
     if (formData.formSender.length < 1 || formData.formEmail.length < 1 || formData.formSubject.length < 1 || formData.formMessage.length < 1) {
       return false;
     }
@@ -59,7 +57,7 @@ class ReactForm extends Component {
 
   render() {
     return(
-      <form className='react-form' onSubmit={this.handleSubmit}>
+      <form action="https://getform.org/f/c908e10c-60c2-4f94-a24e-8bf9b117a1e6" className='react-form' onSubmit={this.handleSubmit} method="POST">
         <h1>Contact Us!</h1>
         <fieldset className='form-group'>
           <ReactFormLabel htmlFor='formName' title='Name:' />

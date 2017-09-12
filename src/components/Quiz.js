@@ -47,7 +47,11 @@ class Quiz extends Component {
   }
 
   render() {
-    const currentQuestion = this.state.answers.length;
+    // console.log(currentQuestion + " " + this.state.answers)
+    let currentQuestion = this.state.answers.length;
+    if(currentQuestion == 1 && this.computeResults() == 0){
+      currentQuestion = 17;
+    }
     if(currentQuestion >= this.questions.length){
       return(
         <Results numCorrect={this.computeResults()} numberOfQuestions={this.questions.length}/>
