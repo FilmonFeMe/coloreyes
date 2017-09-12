@@ -408,7 +408,7 @@ var loadPlate = function(canvasToUse, style, number) {
 
   // Coloreyes: Load number image
   var oReq = new XMLHttpRequest();
-  oReq.open("GET", "http://www.iseergb.com/numbers/"+number+".png", true);// TODO: Change URL once deployed
+  oReq.open("GET", "http://localhost:3000/numbers/"+number+".png", true);// TODO: Change URL once deployed
   oReq.responseType = "arraybuffer";
   oReq.onload = function(oEvent) {
     var blob = new Blob([oReq.response], {type: "image/png"});
