@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Instruction from './Instruction.js'
 import Plates from './Plates.js'
 import Answers from './Answers.js'
 import Results from './Results.js'
@@ -60,12 +59,16 @@ class Quiz extends Component {
     }
     const question = this.questions[currentQuestion];
     return (
-      <div>
-       <div> Plate {currentQuestion + 1} of {this.questions.length} </div>
-       <Plates testType={question.testType} number={question.number} />
-       <Answers onAnswerClicked = { this.onAnswerClicked } />
+      <div id="quiz-layout">
+        <div id="plate">
+          <p> Plate {currentQuestion + 1} of {this.questions.length} </p>
+          <Plates testType={question.testType} number={question.number} />
+        </div>
+        <div id="numpad">
+          <Answers onAnswerClicked = { this.onAnswerClicked } />
+        </div>
       </div>
-      );
+    );
   }
 }
 
