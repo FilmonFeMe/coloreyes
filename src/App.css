@@ -57,8 +57,10 @@ input[type=button] {
   width: 40%;
   align-items: center;
   vertical-align: middle;
+  align-content: center;
 }
 
 #plate {
   flex: 1;
 }
+

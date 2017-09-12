@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Plates from './Plates.js'
 import Answers from './Answers.js'
 import Results from './Results.js'
+import Bar from './Bar.js'
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -65,6 +66,9 @@ class Quiz extends Component {
           <Plates testType={question.testType} number={question.number} />
         </div>
         <div id="numpad">
+          <Bar />
+          <br />
+          <br />
           <Answers onAnswerClicked = { this.onAnswerClicked } />
         </div>
       </div>
