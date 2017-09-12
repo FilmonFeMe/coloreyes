@@ -10,7 +10,8 @@ import Instruction from './components/Instruction.js';
 import AboutUs from './components/AboutUs.js';
 import ContactForm from './components/ContactForm.js';
 import ColorBlindnessView from './components/ColorBlindnessView.js';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import SortableComponent from './components/SortableItem.js'
 
 const root = document.getElementById('root');
 
@@ -28,6 +29,7 @@ ReactDOM.render(
       <Route path="/about-us" component={AboutUs}/>
       <Route path="/contact-us" component={ContactForm}/>
       <Route path="/color-view" component={ColorBlindnessView}/>
+      <Route path="/sortable-item" component={SortableComponent}/>
     </div>
   </Router>,
  root);
