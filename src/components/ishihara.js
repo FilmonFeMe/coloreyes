@@ -408,7 +408,7 @@ var loadPlate = function(canvasToUse, style, number) {
 
   // Coloreyes: Load number image
   var oReq = new XMLHttpRequest();
-  oReq.open("GET", (heroku  info -s |grep web_url | cut -d = -f2)+number+".png", true);// TODO: Change URL once deployed
+  oReq.open("GET", "https://secret-citadel-79719.herokuapp.com/numbers/"+number+".png", true);// TODO: Change URL once deployed
   oReq.responseType = "arraybuffer";
   oReq.onload = function(oEvent) {
     var blob = new Blob([oReq.response], {type: "image/png"});
