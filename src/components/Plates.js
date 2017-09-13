@@ -5,7 +5,6 @@ class Plates extends Component {
   constructor(args) {
     super(args);
     this.state = {
-      //plateImageSrc: "/images/5.png"
     }
   }
 
@@ -21,12 +20,9 @@ class Plates extends Component {
     loadPlate(this.refs.canvas, this.props.testType, this.props.number);
   }
 
-  // loadPlate(this.props.questionId);
   render(){
     return (
-      <div>
-        <canvas ref="canvas" id="canvas">Your browser does not support canvas.</canvas>
-      </div>
+        <canvas className = "plates" ref="canvas" id="canvas">Your browser does not support canvas.</canvas>
     );
   }
 }

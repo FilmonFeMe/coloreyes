@@ -1,3 +1,8 @@
+html, body {
+  height: 100%;
+  border: 1px solid red;
+}
+
 .App {
   text-align: center;
 }
@@ -23,7 +28,7 @@ input[type=button] {
     border-color: #e6e6e6 #e6e6e6 #bfbfbf;
   }
 
-   input[type=button]:active {
+   input[type=button]:active, input[type=button]:focus {
     background-image: none;
     outline: 0;
     background-color:#e0e0e0;
@@ -53,16 +58,74 @@ input[type=button] {
   display: flex;
 }
 
-#numpad {
-  width: 40%;
-  align-items: center;
-  vertical-align: middle;
-}
-
 #plate {
-  flex: 1;
+  /*flex: 1;*/
+  width: 70%;
 }
 
+canvas.plates {
+  width: 85%;
+  /*height: 250px;*/
+}
+
+#root {
+  width: 80%;
+  margin: 0 auto;
+  /*max-width: 960px;*/
+  border: 1px solid green;
+  height: 100%;
+}
+
+.homepage-image {
+  width: 100%;
+}
+
+ #progress {
+    order: -1;
+    height: 40%;
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+  .answer-form {
+    width: 200px;
+  }
+
+  #quiz-layout {
+  display: block;
+  }
+  
+  canvas.plates {
+  width: 250px;
+  height: 250px;
+  }
+
+  #plate {
+    margin: 0 auto;
+  }
+
+  #progress {
+  order: -1;
+  height: 40%;
+  }
+
+  #root {
+    width: 100%;
+  }
+
+  #section2{
+    margin: 0 auto;
+  }
+}
+
+#numpad {
+  order: -1;
+  height: 50%;
+  border: 1;
+}
 
 .inline-item {
   display: inline;
@@ -124,14 +187,14 @@ input[type=button] {
   background-color:#f3f3f3;
   border:1px solid #efefef;
   border-radius:3px;
-  outline:none
+  outline:none;
 }
 
 .Showcase__style__horizontalList {
   display:-webkit-box;
   display:-webkit-flex;
   display:-ms-flexbox;
-  display:flex
+  display:flex;
 }
 
 .Showcase__style__stylizedItem{
@@ -153,7 +216,7 @@ input[type=button] {
   -ms-user-select:none;
   user-select:none;
   color:#333;
-  font-weight:400
+  font-weight:400;
 }
 
 .Showcase__style__horizontalItem {
@@ -174,7 +237,12 @@ input[type=button] {
 }
 
 .Hues {
-display: felx;
-flex-direction: row;
-width: 700px;
+  display: felx;
+  flex-direction: row;
+  width: 700px;
+}
+
+#section2 {
+  border: 1px solid red;
+  width: 50%;
 }
