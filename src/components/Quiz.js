@@ -16,7 +16,6 @@ class Quiz extends Component {
 
     // here we're generating all the styles and numbers that will
     // be part of the test.
-    // TODO(aazevedo): make sure we cover all the styles at least once
     this.questions = [];
     for (let i = 0; i < props.numberOfQuestions; ++i) {
       if(i === 0){
@@ -30,6 +29,7 @@ class Quiz extends Component {
 
     this.state = {
       answers: [],
+      progressPerAnswer: 1 / props.numberOfQuestions,
       progress: 0
     };
     this.onAnswerClicked = this.onAnswerClicked.bind(this);
@@ -37,7 +37,7 @@ class Quiz extends Component {
 
   onAnswerClicked(answer) {
     this.state.answers.push(answer);
-    this.setState({ answers: this.state.answers, progress: this.state.progress + 0.059 }); //=100%/17
+    this.setState({ answers: this.state.answers,  progress: this.state.progress + this.state.progressPerAnswer });
   }
 
   computeResults() {
