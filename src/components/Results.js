@@ -30,7 +30,7 @@ class Result extends Component {
 
     else {
       return(
-        <div htmlClass="results">
+        <div className="results">
         <p>The answers provided indicate an normal ability to distinguish between red and green colors.
         </p>
         <p><strong>Disclaimer:</strong> The information provided by Filmon Mengisteab is not a substitute for professional medical advice, diagnosis, or treatment; it is intended only for general informational purposes.   If you have any concerns or questions about your health, you must consult with your physician or health-care professional.</p>
