@@ -12,15 +12,9 @@ import ContactForm from './components/ContactForm.js';
 import ColorBlindnessView from './components/ColorBlindnessView.js';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import HueTest from './components/HueTest.js'
-import {Provider} from 'react-redux'
-import {createStore, applyMiddleware} from 'redux'
-import reducers from './reducers'
 
-const root = document.getElementById('root');
-const createStoreWithMiddleware = applyMiddleware()(createStore)
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
     <Router>
       <div>
         <Navbar></Navbar>
@@ -36,7 +30,6 @@ ReactDOM.render(
         <Route path="/color-view" component={ColorBlindnessView}/>
         <Route path="/hue-test" component={HueTest}/>
       </div>
-    </Router>
-  </Provider>,
+    </Router>,
  root);
 registerServiceWorker();
