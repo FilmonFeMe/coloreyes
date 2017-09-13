@@ -28,7 +28,7 @@ input[type=button] {
     border-color: #e6e6e6 #e6e6e6 #bfbfbf;
   }
 
-   input[type=button]:active {
+   input[type=button]:active, input[type=button]:focus {
     background-image: none;
     outline: 0;
     background-color:#e0e0e0;
@@ -148,7 +148,7 @@ canvas.plates {
     border: 1px solid #EFEFEF;
     border-radius: 3px;
     outline: none;
-    
+
     width: 100px;
     height: 600px;
     overflow: auto;
