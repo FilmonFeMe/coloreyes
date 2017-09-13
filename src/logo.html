@@ -1,0 +1,177 @@
+<svg width="1920" height="1000">
+  <circle class="iris" cx="960" cy="500" r="200" />
+  <!-- <circle class="pupil" cx="960" cy="500" r="100" /> -->
+  <circle class="flare" cx="1030" cy="442" r="40" />
+  <circle class="outer-eye" cx="960" cy="500" r="300" />
+
+</svg>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script>
+  let svg = d3.select("svg"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height"),
+      angles = d3.range(0, 2 * Math.PI, Math.PI / 200);
+
+  // let pupil = d3.selectAll(".pupil");
+
+  let flare = d3.selectAll(".flare");
+  flare.style("fill", "white");
+
+  let iris = d3.selectAll(".iris");
+  iris.style("fill", "black");
+
+  let outerEye = d3.selectAll(".outer-eye")
+    .attr("fill", "none")
+    .attr("stroke", "black")
+    .attr("stroke-width", 1);
+
+
+  let path = svg.append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+      .attr("fill", "none")
+      .attr("stroke-width", 21)
+      .attr("stroke-linejoin", "round")
+    .selectAll("path")
+    .data(["cyan", "magenta", "yellow"])
+    .enter().append("path")
+      .attr("stroke", function(d) { return d; })
+      .style("mix-blend-mode", "darken")
+      .datum(function(d, i) {
+        return d3.radialLine()
+            .curve(d3.curveLinearClosed)
+            .angle(function(a) { return a; })
+            .radius(function(a) {
+              let time = d3.now() / 750;
+              let circumference = 195;
+              let waveAmplitude = 40;
+              let waveFrequency = 4;
+              return circumference + Math.cos(a * waveFrequency - i * 2 * Math.PI / 3 + time) * Math.pow((1.05 + Math.cos(a - time)) / 2, 12) * waveAmplitude;
+            });
+      });
+
+  d3.timer(function() {
+    path.attr("d", function(d) {
+      return d(angles);
+    });
+  });
+</script>
+
+
+<!-- ORIGINAL ON IRIS
+<svg width="960" height="500">
+  <circle class="iris" cx="480" cy="250" r="125" />
+  <circle class="pupil" cx="480" cy="250" r="80" />
+  <circle class="flare" cx="500" cy="215" r="20" />
+  <circle class="outer-eye" cx="480" cy="250" r="200" />
+</svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script>
+  let svg = d3.select("svg"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height"),
+      angles = d3.range(0, 2 * Math.PI, Math.PI / 200);
+
+  let pupil = d3.selectAll(".pupil");
+
+  let flare = d3.selectAll(".flare");
+  flare.style("fill", "white");
+
+  let iris = d3.selectAll(".iris");
+  iris.style("fill", "blue");
+
+  let outerEye = d3.selectAll(".outer-eye")
+    .attr("fill", "none")
+    .attr("stroke", "black")
+    .attr("stroke-width", 1);
+
+  let path = svg.append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+      .attr("fill", "none")
+      .attr("stroke-width", 10)
+      .attr("stroke-linejoin", "round")
+    .selectAll("path")
+    .data(["cyan", "magenta", "yellow"])
+    .enter().append("path")
+      .attr("stroke", function(d) { return d; })
+      .style("mix-blend-mode", "darken")
+      .datum(function(d, i) {
+        return d3.radialLine()
+            .curve(d3.curveLinearClosed)
+            .angle(function(a) { return a; })
+            .radius(function(a) {
+              let t = d3.now() / 500;
+              return 125 + Math.cos(a * 4 - i * 2 * Math.PI / 3 + t) * Math.pow((1 + Math.cos(a - t)) / 2, 12) * 20;
+            });
+      });
+
+      let circle = svg.append("g")
+      .attr("cx", 30)
+      .attr("cy", 30)
+      .attr("r", 20);
+
+
+  d3.timer(function() {
+    path.attr("d", function(d) {
+      return d(angles);
+    });
+  });
+</script> -->
+
+
+<!-- ORIGINAL
+<svg width="960" height="500">
+  <circle class="iris" cx="480" cy="250" r="125" />
+  <circle class="pupil" cx="480" cy="250" r="80" />
+  <circle class="flare" cx="500" cy="215" r="20" />
+</svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script>
+  let svg = d3.select("svg"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height"),
+      angles = d3.range(0, 2 * Math.PI, Math.PI / 200);
+
+  let pupil = d3.selectAll(".pupil");
+
+  let flare = d3.selectAll(".flare");
+  flare.style("fill", "white");
+
+  let iris = d3.selectAll(".iris");
+  iris.style("fill", "blue");
+
+  let path = svg.append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+      .attr("fill", "none")
+      .attr("stroke-width", 15)
+      .attr("stroke-linejoin", "round")
+    .selectAll("path")
+    .data(["cyan", "magenta", "yellow"])
+    .enter().append("path")
+      .attr("stroke", function(d) { return d; })
+      .style("mix-blend-mode", "darken")
+      .datum(function(d, i) {
+        return d3.radialLine()
+            .curve(d3.curveLinearClosed)
+            .angle(function(a) { return a; })
+            .radius(function(a) {
+              let t = d3.now() / 500;
+              return 200 + Math.cos(a * 4 - i * 2 * Math.PI / 3 + t) * Math.pow((1 + Math.cos(a - t)) / 2, 12) * 20;
+            });
+      });
+
+      let circle = svg.append("g")
+      .attr("cx", 30)
+      .attr("cy", 30)
+      .attr("r", 20);
+
+
+  d3.timer(function() {
+    path.attr("d", function(d) {
+      return d(angles);
+    });
+  });
+</script> -->
