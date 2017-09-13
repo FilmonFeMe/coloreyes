@@ -1,7 +1,7 @@
 html, body {
   height: 100%;
-  border: 1px solid red;
-}
+/*  border: 1px solid red;
+*/}
 
 .App {
   text-align: center;
@@ -91,13 +91,30 @@ canvas.plates {
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) { 
   .answer-form {
-    width: 200px;
+    width: 130px;
+    padding-left: 100px;
+  }
+
+  .bar-class {
+   margin-right: 250px;
   }
 
   #quiz-layout {
   display: block;
   }
-  
+
+  #progress {
+  order: -1;
+  height: 40%;
+  }
+
+  .progressbar {
+  width: 35% !important; 
+  left: 10% !important; 
+  top: 66% !important; 
+  position: absolute !important;
+  }
+
   canvas.plates {
   width: 250px;
   height: 250px;
@@ -107,17 +124,13 @@ canvas.plates {
     margin: 0 auto;
   }
 
-  #progress {
-  order: -1;
-  height: 40%;
-  }
-
   #root {
     width: 100%;
   }
 
   #section2{
     margin: 0 auto;
+    height: 0px;
   }
 }
 
@@ -243,6 +256,13 @@ canvas.plates {
 }
 
 #section2 {
-  border: 1px solid red;
-  width: 50%;
+    /*border: 1px solid red;*/
+    width: 50%;
 }
+
+.progress {
+  width: 50%;
+  left: 25%;
+}
+
+

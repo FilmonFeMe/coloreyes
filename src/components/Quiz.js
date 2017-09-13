@@ -85,7 +85,7 @@ class Quiz extends Component {
         </div>
         <div id="section2">
           <div id="progress">
-            <Bar progress={this.state.progress}/>
+            <Bar className="bar-class" progress={this.state.progress}/>
           </div>
           <div id="numpad">
             <Answers onAnswerClicked = { this.onAnswerClicked } />
