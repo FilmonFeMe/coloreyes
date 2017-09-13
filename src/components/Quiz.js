@@ -30,14 +30,14 @@ class Quiz extends Component {
 
     this.state = {
       answers: [],
-      progress: 0.059 //=100%/17
+      progress: 0
     };
     this.onAnswerClicked = this.onAnswerClicked.bind(this);
   }
 
   onAnswerClicked(answer) {
     this.state.answers.push(answer);
-    this.setState({ answers: this.state.answers, progress: this.state.progress + 0.059 });
+    this.setState({ answers: this.state.answers, progress: this.state.progress + 0.059 }); //=100%/17
   }
 
   computeResults() {
