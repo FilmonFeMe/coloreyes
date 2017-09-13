@@ -63,6 +63,10 @@ input[type=button] {
   width: 60%;
 }
 
+canvas.plates {
+  width: 85%;
+  /*height: 250px;*/
+}
 
 #root {
   width: 80%;
@@ -88,25 +92,32 @@ input[type=button] {
   and (orientation: portrait) { 
   .answer-form {
     width: 200px;
-    padding-top: 115px;
-    /*margin-right: 7000px;*/
-    /*padding-right: 4000px;*/
-    /*padding-left: -1500px;*/
-    /*margin: auto;*/
   }
 
-    canvas.plates {
-  width: 100%;
+  #quiz-layout {
+  display: block;
+  }
+  
+  canvas.plates {
+  width: 250px;
   height: 250px;
+  }
+
+  #plate {
+    margin: 0 auto;
+  }
 
   #progress {
-    order: -1;
-    height: 40%;
-    }
+  order: -1;
+  height: 40%;
   }
 
   #root {
     width: 100%;
+  }
+
+  #section2{
+    margin: 0 auto;
   }
 }
 
