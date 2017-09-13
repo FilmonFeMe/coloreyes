@@ -11,7 +11,7 @@ import AboutUs from './components/AboutUs.js';
 import ContactForm from './components/ContactForm.js';
 import ColorBlindnessView from './components/ColorBlindnessView.js';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import SortableComponent from './components/SortableItem.js'
+import HueTest from './components/HueTest.js'
 import {Provider} from 'react-redux'
 import {createStore, applyMiddleware} from 'redux'
 import reducers from './reducers'
@@ -34,7 +34,7 @@ ReactDOM.render(
         <Route path="/about-us" component={AboutUs}/>
         <Route path="/contact-us" component={ContactForm}/>
         <Route path="/color-view" component={ColorBlindnessView}/>
-        <Route path="/sortable-item" component={SortableComponent}/>
+        <Route path="/hue-test" component={HueTest}/>
       </div>
     </Router>
   </Provider>,
