@@ -25,7 +25,7 @@ class Plates extends Component {
   render(){
     return (
       <div>
-        <canvas ref="canvas" id="canvas">Your browser does not support canvas.</canvas>
+        <canvas className = "plates" ref="canvas" id="canvas">Your browser does not support canvas.</canvas>
       </div>
     );
   }
