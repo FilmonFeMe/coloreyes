@@ -14,12 +14,12 @@ function generateTestTypes(numOfQuestions) {
   let testTypes = [];
   let occuranceOfEachType = Math.ceil((numOfQuestions - 1) / 6) // 7 possible types, but one is exclusive to the first question
   for (let i = 0; i < occuranceOfEachType; i++) {
-    testTypes.push(0);
-    testTypes.push(1);
-    testTypes.push(2);
-    testTypes.push(3);
-    testTypes.push(4);
     testTypes.push(6);
+    testTypes.push(0);
+    testTypes.push(3);
+    testTypes.push(2);
+    testTypes.push(4);
+    testTypes.push(1);
     // We're not pushing 5, since that's reserved for the first questions.
   }
   return testTypes;

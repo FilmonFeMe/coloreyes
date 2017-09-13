@@ -18,7 +18,7 @@ class Result extends Component {
         </div>
       );
     }
-    else if ((this.props.numCorrect / this.props.numberOfQuestions) < .80) {
+    else if ((this.props.numCorrect / this.props.numberOfQuestions) < .90) {
       return(
         <div className="results">
           <p>The answers provided indicate a difficulty interpreting red and green colors.  Red and/or green may appear as one color, or as grey.  Colors which contain hues of red or green may also be impacted.  For example, purple is a mixture of both red and blue; therefore, purple may appear indistinguishable from blue to someone affected by red-green colorblindness.</p>
