@@ -954,7 +954,7 @@ babel-register@^6.24.1, babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@6.26.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
+babel-runtime@6.26.0, babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -3975,6 +3975,10 @@ lodash.defaults@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
 
+lodash.isequal@^4.1.4:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+
 lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
@@ -3996,7 +4000,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0:
+"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.12.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -5023,6 +5027,12 @@ progress@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.0.tgz#8a1be366bf8fc23db2bd23f10c6fe920b4389d1f"
 
+progressbar.js@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/progressbar.js/-/progressbar.js-1.0.1.tgz#f7fbfc195240fe0bb32f6f7bdb2e7ff400ea71f9"
+  dependencies:
+    shifty "^1.5.2"
+
 promise@8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/promise/-/promise-8.0.1.tgz#e45d68b00a17647b6da711bf85ed6ed47208f450"
@@ -5035,7 +5045,7 @@ promise@^7.0.3, promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7:
   version "15.5.10"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
@@ -5159,7 +5169,7 @@ react-dev-utils@^4.0.1:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-"react-dom@^15 || ^16", react-dom@^15.6.1:
+"react-dom@^15 || ^16", react-dom@^15.0.1, react-dom@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.1.tgz#2cb0ed4191038e53c209eb3a79a23e2a4cf99470"
   dependencies:
@@ -5186,6 +5196,15 @@ react-image-file@^0.1.0:
   resolved "https://registry.yarnpkg.com/react-image-file/-/react-image-file-0.1.0.tgz#8c845899dda1e1c2fdbd2422db54eb0dc9b85f65"
   dependencies:
     react "^0.14.3"
+
+react-progressbar.js@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-progressbar.js/-/react-progressbar.js-0.2.0.tgz#ff96f0fabd8f0f7d4411b3630b1d2016c38df625"
+  dependencies:
+    lodash.isequal "^4.1.4"
+    progressbar.js "^1.0.1"
+    react "^15.0.1"
+    react-dom "^15.0.1"
 
 react-router-dom@^4.2.2:
   version "4.2.2"
@@ -5252,6 +5271,15 @@ react-scripts@1.0.13:
   optionalDependencies:
     fsevents "1.1.2"
 
+react-sortable-hoc@^0.6.7:
+  version "0.6.7"
+  resolved "https://registry.yarnpkg.com/react-sortable-hoc/-/react-sortable-hoc-0.6.7.tgz#e30d247bc36dd5a605430c331ac9cb50a5fa72a6"
+  dependencies:
+    babel-runtime "^6.11.6"
+    invariant "^2.2.1"
+    lodash "^4.12.0"
+    prop-types "^15.5.7"
+
 react@^0.14.3:
   version "0.14.9"
   resolved "https://registry.yarnpkg.com/react/-/react-0.14.9.tgz#9110a6497c49d44ba1c0edd317aec29c2e0d91d1"
@@ -5259,7 +5287,7 @@ react@^0.14.3:
     envify "^3.0.0"
     fbjs "^0.6.1"
 
-"react@^15 || ^16", react@^15.6.1:
+"react@^15 || ^16", react@^15.0.1, react@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.1.tgz#baa8434ec6780bde997cdc380b79cd33b96393df"
   dependencies:
@@ -5733,6 +5761,10 @@ shell-quote@1.6.1:
 shellwords@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
+
+shifty@^1.5.2:
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/shifty/-/shifty-1.5.4.tgz#d4362fc914dd280ddf6e522be408b21203208346"
 
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
