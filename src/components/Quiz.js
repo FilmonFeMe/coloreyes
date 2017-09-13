@@ -20,10 +20,10 @@ class Quiz extends Component {
     for (let i = 0; i < props.numberOfQuestions; ++i) {
       if(i === 0){
         this.questions.push(
-          {testType: 5, number: getRandomInt(1, 9)});
+          {testType: 5, number: getRandomInt(1, 10)});
       }else{
         this.questions.push(
-          {testType: getRandomInt(0, 7), number: getRandomInt(1, 9)});
+          {testType: getRandomInt(0, 7), number: getRandomInt(1, 10)});
       }
     }
 
