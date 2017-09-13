@@ -1,22 +1,29 @@
 import React, {Component} from 'react';
-import {render} from 'react-dom';
 import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
-import {connect} from 'react-redux'
-import * as actions from '../actions'
 
 const SortableItem = SortableElement(({value}) =>
-  <div className="SortableItem" style={{"background-color":value}}>{value}</div>
+  // console.log({this.index})
+  <div className="SortableItem" style={{"backgroundColor":value}}>{this.index}</div>
 );
 
-const SortableList = SortableContainer(({row1}) => {
+const SortableList = SortableContainer(({row, firstBox, lastBox}) => {
   return (
-    <div className="SortableList">
-      {row1.map((value, index) => (
-        <SortableItem key={`item-${index}`} index={index} value={value} />
-      ))}
+    <div style={{"display":"inline-block"}}>
+      <div className="SortableList">
+      <div className="SortableItem" style={{"backgroundColor":firstBox,"marginBottom":"5px"}}></div>
+        {row.map((value, index) => (
+          <SortableItem key={`item-${index}`} index={index} value={value} />
+        ))}
+      <div className="SortableItem" style={{"backgroundColor":lastBox,"marginTop":"5px"}}></div>        
+      </div>
     </div>
   );
 });
+
+
+const firstValues = ["#ac7672", "#8f8c4a", "#549789", "#8088a5"];
+const lastValues = ["#8f8c4a", "#549789", "#8088a5", "#ad7776"];
+
 
 class SortableComponent extends Component {
   
@@ -27,51 +34,43 @@ class SortableComponent extends Component {
     row4:["#8088a5","#8489a6","#8888a6","#8a88a4","#8f88a4","#9287a3","#9386a0","#98859f","#98849c","#9b8198","#a08298","#9d7c91","#a37e92","#a77e90","#a77b8c","#a87988","#aa7784","#ac7982","#ac757e","#ab757a","#a97375","#ad7776"]
   };
 
-  // componentWillMount(){
-  //   this.props.HuesList();
-  // }
-
-  // renderList = (hues) =>{
-  //   if(hues){
-  //     // console.log(hues+" from render list function")
-  //     return hues.map((hueSection)=>{
-  //       // console.log(hueSection+" from map function")
-  //       return hueSection.map((hue)=>{
-  //         // console.log(hue.id+" from sublevel function")
-  //         return (
-  //           // console.log(this.props)
-  //           <div key={hue.id}>
-  //             <SortableList hue={hue} key={hue.id} onSortEnd={this.onSortEnd} />;
-  //           </div>
-  //       )
-  //       })
-  //     })
-  //   }  
-  // }
-
   render() {
+    // this.shuffleRows;
     return (
-      <div>
+      <div calssName="Hues">
        <h1>Hue Test</h1>
-          {/* {this.renderList(this.props.hues)} */}
-          <SortableList row1={this.state.row1} onSortEnd={this.onSortEnd} />;
+          <SortableList row={this.state.row1} onSortEnd={this.onSortEnd1} firstBox={"#ac7672"} lastBox={"#8f8c4a"}/>
+          <SortableList row={this.state.row2} onSortEnd={this.onSortEnd2} firstBox={"#8f8c4a"} lastBox={"#549789"}/>
+          <SortableList row={this.state.row3} onSortEnd={this.onSortEnd3} firstBox={"#549789"} lastBox={"#8088a5"}/>
+          <SortableList row={this.state.row4} onSortEnd={this.onSortEnd4} firstBox={"#8088a5"} lastBox={"#ad7776"}/>
       </div>
     );
   }
 
-  onSortEnd = ({oldIndex, newIndex}) => {
+  onSortEnd1 = ({oldIndex, newIndex}) => {
     this.setState({
-      row1: arrayMove(this.state.row1, oldIndex, newIndex),
+      row1: arrayMove(this.state.row1, oldIndex, newIndex)
     });
-  };
+    console.log(oldIndex+" "+newIndex)
+  }
+
+  onSortEnd2 = ({oldIndex, newIndex}) => {
+    this.setState({
+      row2: arrayMove(this.state.row2, oldIndex, newIndex)
+    });
+  }
+
+  onSortEnd3 = ({oldIndex, newIndex}) => {
+    this.setState({
+      row3: arrayMove(this.state.row3, oldIndex, newIndex)
+    });
+  }
+
+  onSortEnd4 = ({oldIndex, newIndex}) => {
+    this.setState({
+      row4: arrayMove(this.state.row4, oldIndex, newIndex)
+    });
+  }
 }
 
-// function mapStateToProps(state){
-//   return {
-//     hues:state.hues
-//   }
-// }
-
 export default SortableComponent;
-// render(<SortableComponent/>, document.getElementById('root'));
-// export default connect(mapStateToProps,actions)(SortableComponent);
