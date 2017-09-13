@@ -59,17 +59,10 @@ input[type=button] {
 }
 
 #plate {
-  flex: 1;
+  /*flex: 1;*/
   width: 60%;
 }
 
-#section2 {
-  width: 40%;
-}
-
-#plate {
-  flex: 1;
-}
 
 #root {
   width: 80%;
@@ -83,18 +76,38 @@ input[type=button] {
   width: 100%;
 }
 
-/*@media only screen 
+ #progress {
+    order: -1;
+    height: 40%;
+}
+
+@media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) { 
-    canvas.plates {
-  /*width: 100%;*/
-  /*height: 250px;*//**/  
+  .answer-form {
+    width: 200px;
+    padding-top: 115px;
+    /*margin-right: 7000px;*/
+    /*padding-right: 4000px;*/
+    /*padding-left: -1500px;*/
+    /*margin: auto;*/
+  }
 
-#progress {
-  order: -1;
-  height: 40%;
+    canvas.plates {
+  width: 100%;
+  height: 250px;
+
+  #progress {
+    order: -1;
+    height: 40%;
+    }
+  }
+
+  #root {
+    width: 100%;
+  }
 }
 
 #numpad {
@@ -212,8 +225,8 @@ input[type=button] {
 }
 
 
-
-
-
-
+#section2 {
+  border: 1px solid red;
+  width: 40%;
+}
 
