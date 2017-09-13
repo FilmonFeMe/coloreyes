@@ -10,34 +10,51 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 };
 
+function generateTestTypes(numOfQuestions) {
+  let testTypes = [];
+  let occuranceOfEachType = Math.ceil((numOfQuestions - 1) / 6) // 7 possible types, but one is exclusive to the first question
+  for (let i = 0; i < occuranceOfEachType; i++) {
+    testTypes.push(6);
+    testTypes.push(0);
+    testTypes.push(3);
+    testTypes.push(2);
+    testTypes.push(4);
+    testTypes.push(1);
+    // We're not pushing 5, since that's reserved for the first questions.
+  }
+  return testTypes;
+};
+
 class Quiz extends Component {
   constructor(props) {
     super(props);
 
-    // here we're generating all the styles and numbers that will
+    // here we're generating all the test types and numbers that will
     // be part of the test.
-    // TODO(aazevedo): make sure we cover all the styles at least once
     this.questions = [];
+    const testTypesSet = generateTestTypes(props.numberOfQuestions);
+
     for (let i = 0; i < props.numberOfQuestions; ++i) {
       if(i === 0){
         this.questions.push(
-          {testType: 5, number: getRandomInt(1, 9)});
+          {testType: 5, number: getRandomInt(1, 10)});
       }else{
         this.questions.push(
-          {testType: getRandomInt(0, 7), number: getRandomInt(1, 9)});
+          {testType: testTypesSet.pop(), number: getRandomInt(1, 10)});
       }
     }
 
     this.state = {
       answers: [],
-      progress: 0.059 //=100%/17
+      progressPerAnswer: 1 / props.numberOfQuestions,
+      progress: 0
     };
     this.onAnswerClicked = this.onAnswerClicked.bind(this);
   }
 
   onAnswerClicked(answer) {
     this.state.answers.push(answer);
-    this.setState({ answers: this.state.answers, progress: this.state.progress + 0.059 });
+    this.setState({ answers: this.state.answers,  progress: this.state.progress + this.state.progressPerAnswer });
   }
 
   computeResults() {

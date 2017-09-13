@@ -28,7 +28,7 @@ input[type=button] {
     border-color: #e6e6e6 #e6e6e6 #bfbfbf;
   }
 
-   input[type=button]:active {
+   input[type=button]:active, input[type=button]:focus {
     background-image: none;
     outline: 0;
     background-color:#e0e0e0;
@@ -162,13 +162,14 @@ canvas.plates {
     border-radius: 3px;
     outline: none;
     
-    width: 100px;
+    width: 44px;
     height: 600px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     border: 1px solid #E0E0E0;
     list-style: none;
-    padding: 0;
+    padding: 5px 15px 5px 5px;
+    margin: 20px;
 }
 .SortableItem {
     display: -webkit-box;
@@ -179,9 +180,9 @@ canvas.plates {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    width: 100%;
-    height: 60px;
-    padding: 0 20px;
+    width: 42px;
+    height: 42px;
+    padding: 10px 20px;
     background-color: #FFF;
     border-bottom: 1px solid #EFEFEF;
     box-sizing: border-box;
@@ -219,7 +220,7 @@ canvas.plates {
   -ms-flex-align:center;
   align-items:center;
   width:100px;
-  padding:0 20px;
+  padding:10px 20px;
   background-color:#fff;
   border-bottom:1px solid #efefef;
   box-sizing:border-box;
@@ -245,22 +246,23 @@ canvas.plates {
   justify-content:center;
   width:100px;
   border-right:1px solid #efefef;
-  border-bottom:0;
+  border-bottom:0
 }
 
+.Hues {
+  display: felx;
+  flex-direction: row;
+  width: 700px;
+}
 
 #section2 {
     /*border: 1px solid red;*/
     width: 50%;
 }
 
-
-  .progress {
+.progress {
   width: 50%;
   left: 25%;
 }
-
-
-
 
 
