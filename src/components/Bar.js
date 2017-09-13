@@ -3,6 +3,9 @@ import ProgressBar from 'react-progressbar.js';
 var Circle = ProgressBar.SemiCircle;
 
 class Bar extends Component{
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     var options = {
@@ -43,7 +46,7 @@ class Bar extends Component{
 
     return (
       <Circle
-        progress={0.1}
+        progress={this.props.progress}
         text={'test'}
         options={options}
         initialAnimate={true}

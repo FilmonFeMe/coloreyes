@@ -53,14 +53,23 @@ input[type=button] {
   display: flex;
 }
 
-#numpad {
-  width: 40%;
-  align-items: center;
-  vertical-align: middle;
-  align-content: center;
-}
-
 #plate {
   flex: 1;
+  width: 60%;
+}
+
+#section2 {
+  width: 40%;
+}
+
+#progress {
+  order: -1;
+  height: 40%;
+}
+
+#numpad {
+  order: -1;
+  height: 50%;
+  border: 1;
 }
 
