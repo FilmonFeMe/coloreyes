@@ -230,8 +230,10 @@ var loadPlate = function(canvasToUse, style, number) {
 
   var ctx = canvas.getContext('2d');
 
-  var max_width  = window.innerWidth;
-  var max_height = window.innerHeight;
+  // ColoyEyes: We can play with this adjustment to alter circle size
+  let radius_adjust = 200;//pixels
+  var max_width  = window.innerWidth - radius_adjust;
+  var max_height = window.innerHeight - radius_adjust;
 
   ctx.canvas.width  = max_width;
   ctx.canvas.height = max_height;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Plates from './Plates.js'
 import Answers from './Answers.js'
 import Results from './Results.js'
+import Bar from './Bar.js'
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -29,13 +30,14 @@ class Quiz extends Component {
 
     this.state = {
       answers: [],
+      progress: 0.059 //=100%/17
     };
     this.onAnswerClicked = this.onAnswerClicked.bind(this);
   }
 
   onAnswerClicked(answer) {
     this.state.answers.push(answer);
-    this.setState({ answers: this.state.answers });
+    this.setState({ answers: this.state.answers, progress: this.state.progress + 0.059 });
   }
 
   computeResults() {
@@ -61,11 +63,16 @@ class Quiz extends Component {
     return (
       <div id="quiz-layout">
         <div id="plate">
-          <p> Plate {currentQuestion + 1} of {this.questions.length} </p>
+          {/*<p> Plate {currentQuestion + 1} of {this.questions.length} </p>*/}
           <Plates testType={question.testType} number={question.number} />
         </div>
-        <div id="numpad">
-          <Answers onAnswerClicked = { this.onAnswerClicked } />
+        <div id="section2">
+          <div id="progress">
+            <Bar progress={this.state.progress}/>
+          </div>
+          <div id="numpad">
+            <Answers onAnswerClicked = { this.onAnswerClicked } />
+          </div>
         </div>
       </div>
     );
