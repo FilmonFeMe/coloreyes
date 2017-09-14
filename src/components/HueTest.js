@@ -101,8 +101,6 @@ class HueTest extends Component {
       )
     }
     return (
-      <div id="container-hue">
-
       <div className="Hues">
        <h1>Hue Test</h1>
         <div className="instructions">
@@ -113,6 +111,7 @@ class HueTest extends Component {
             <li>Click "Done" once you finish sorting.</li>
           </ul>
         </div>
+        <div id="container-hue">
         <SortableList row={this.state.row1} onSortEnd={this.onSortEnd1} firstBox={"#ac7672"} lastBox={"#8f8c4a"}/>
         <SortableList row={this.state.row2} onSortEnd={this.onSortEnd2} firstBox={"#8f8c4a"} lastBox={"#549789"}/>
         <SortableList row={this.state.row3} onSortEnd={this.onSortEnd3} firstBox={"#549789"} lastBox={"#8088a5"}/>
