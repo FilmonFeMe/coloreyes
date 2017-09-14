@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo.js';
 
 class NavComponent extends Component{
 	render() {
 		return (
 			<nav>
-	      <Link to="/">Home</Link><span> | </span>
+	      <Link to="/">
+				<div className="logo"></div>
+				</Link><span> | </span>
 	      <Link to="/about-us">About Us</Link><span> | </span>
 	      <Link to="/contact-us">Contact Us</Link><span> | </span>
 	      <Link to="/color-view">Color blindness view</Link>
@@ -15,4 +18,3 @@ class NavComponent extends Component{
 }
 
 export default NavComponent;
-
