@@ -6,10 +6,8 @@ class Logo extends Component {
 
   render() {
     return (
-      <Link to="/">
         <svg width="500" height="500">
         </svg>
-      </Link>
     )
   };
 

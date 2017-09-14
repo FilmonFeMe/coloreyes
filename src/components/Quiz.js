@@ -3,6 +3,7 @@ import Plates from './Plates.js'
 import Answers from './Answers.js'
 import Results from './Results.js'
 import Bar from './Bar.js'
+import MobileBar from './MobileBar.js'
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -84,6 +85,9 @@ class Quiz extends Component {
         <div id="section2">
           <div id="progress">
             <Bar className="bar-class" progress={this.state.progress}/>
+          </div>
+          <div id="progressLine">
+            <MobileBar progress={this.state.progress}/>
           </div>
           <div id="numpad">
             <Answers onAnswerClicked = { this.onAnswerClicked } />
