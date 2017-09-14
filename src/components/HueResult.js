@@ -13,7 +13,8 @@ class HueResult extends Component {
           <Chart {...this.props}/>
           <div id="hue-interpretation">
             <h2>Results interpretation:</h2>
-            Bla bla bla, blu blu blu, bli bli bli...
+            The chart above represents your general visual acuity for distinguishing between shades of Red, Blue, Green and Yellow.
+            A completely filled chart means a perfect score.
           </div>
           <div id="hue-about">
             <h2>About this test:</h2>
