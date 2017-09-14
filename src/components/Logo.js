@@ -23,40 +23,63 @@ class Logo extends Component {
 
 
     // create iris
+    let irisGradient = svg.append("defs")
+    .append("radialGradient")
+    .attr("id", "iris-gradient");
+
+    irisGradient.append("stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#000000");
+
+    irisGradient.append("stop")
+    .attr("offset", "33%")
+    .attr("stop-color", "#000000");
+
+    irisGradient.append("stop")
+    .attr("offset", "42%")
+    .attr("stop-color", "#42d2ff");
+
+    irisGradient.append("stop")
+    .attr("offset", "93%")
+    .attr("stop-color", "#000000");
+
+    irisGradient .append("stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#000000");
 
       svg.append("circle")
       .attr("class", "iris")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
       .attr("r", width * .27)
       .attr("stroke", "black")
-      .attr("stroke-width", 10)
-      .attr("fill", "black")
+      .attr("stroke-width", 0)
+      .attr("fill", "url(#iris-gradient)")
 
 
     // create flare
-    var radialGradient = svg.append("defs")
+    let flareGradient = svg.append("defs")
     .append("radialGradient")
-    .attr("id", "iris-gradient");
+    .attr("id", "flare-gradient");
 
-    radialGradient.append("stop")
-    .attr("offset", "0%")
-    .attr("stop-color", "#cee5ff");
+    flareGradient.append("stop")
+    .attr("offset", "10%")
+    .attr("stop-color", "#e0e0e0");
 
-    radialGradient.append("stop")
+    flareGradient.append("stop")
     .attr("offset", "100%")
     .attr("stop-color", "#000000");
 
     svg.append("circle")
       .attr("class", "iris")
-      .attr("transform", "translate(" + (6.1/5) * width / 2 + "," + (3.8/5) * height / 2 + ")")
-      .attr("r", width * .09)
-      .attr("fill", "url(#iris-gradient)")
+      .attr("transform", "translate(" + 1.06 * width / 2 + "," + .94 * height / 2 + ")")
+      .attr("r", width * .02)
+      .attr("fill", "url(#flare-gradient)")
 
 
     let path = svg.append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
       .attr("fill", "none")
-      .attr("stroke-width", 7)
+      .attr("stroke-width", 6)
       .attr("stroke-linejoin", "round")
     .selectAll("path")
     .data(["cyan", "magenta", "yellow"])
@@ -70,10 +93,10 @@ class Logo extends Component {
         return a;
       })
       .radius(function(a) {
-        let speed = d3.now() / 1000;
-        let circumference = width * .39;
-        let waveAmplitude = width * .023;
-        let waveFrequency = width * .01;
+        let speed = d3.now() / 1042;
+        let circumference = width * .303;
+        let waveAmplitude = width * .021;
+        let waveFrequency = width * .014;
         return circumference + Math.cos(a * waveFrequency - i * 2 * Math.PI / 3 + speed) * Math.pow((1.05 + Math.cos(a - speed)) / 2, 12) * waveAmplitude;
       });
     });
