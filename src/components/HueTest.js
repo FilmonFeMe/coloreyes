@@ -81,14 +81,21 @@ class HueTest extends Component {
   render() {
     // this.shuffleRows;
     return (
-      <div calssName="Hues">
-       <h1>Hue Test</h1>
+      <div id="container-hue">
+      <div className="Hues">
+           <h1>Hue Test</h1>
+
+        <div className="a-flex-row-class">
           <SortableList row={this.state.row1} onSortEnd={this.onSortEnd1} firstBox={"#ac7672"} lastBox={"#8f8c4a"}/>
           <SortableList row={this.state.row2} onSortEnd={this.onSortEnd2} firstBox={"#8f8c4a"} lastBox={"#549789"}/>
           <SortableList row={this.state.row3} onSortEnd={this.onSortEnd3} firstBox={"#549789"} lastBox={"#8088a5"}/>
           <SortableList row={this.state.row4} onSortEnd={this.onSortEnd4} firstBox={"#8088a5"} lastBox={"#ad7776"}/>
-          <button type="button" onClick={this.generateResults}>Get Results</button>
           {/* <HueResult /> */}
+          </div>
+                  <div className="a-flex-row-class space-between">
+          <button className="munsell-button" type="button" onClick={this.generateResults}>Get Results</button>
+        </div>
+      </div>
       </div>
     );
   }
