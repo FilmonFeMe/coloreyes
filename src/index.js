@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import Logo from './components/Logo.js';
 import Navbar from './components/Navbar.js';
 import Header from './components/Header.js';
 import Home from './components/Home.js';
@@ -17,6 +18,7 @@ const root = document.getElementById('root');
 ReactDOM.render(
 <Router>
     <div>
+    <Logo></Logo>
       <Navbar></Navbar>
       <hr/>
       <Header></Header>

@@ -1,37 +1,35 @@
 <svg width="1920" height="1000">
   <circle class="iris" cx="960" cy="500" r="200" />
-  <!-- <circle class="pupil" cx="960" cy="500" r="100" /> -->
-  <circle class="flare" cx="1030" cy="442" r="40" />
-  <circle class="outer-eye" cx="960" cy="500" r="300" />
-
+  <circle class="flare" cx="1042" cy="422" r="42" />
+  <circle class="outer-eye" cx="960" cy="500" r="290" />
 </svg>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
 <script>
+let flare = d3.selectAll(".flare");
+flare.style("fill", "white");
+
+let iris = d3.selectAll(".iris");
+iris.style("fill", "black");
+
+let outerEye = d3.selectAll(".outer-eye")
+.attr("fill", "none")
+.attr("stroke", "black")
+.attr("stroke-width", 1)
+.attr("cx", 960);
+
+
   let svg = d3.select("svg"),
       width = +svg.attr("width"),
       height = +svg.attr("height"),
       angles = d3.range(0, 2 * Math.PI, Math.PI / 200);
 
-  // let pupil = d3.selectAll(".pupil");
-
-  let flare = d3.selectAll(".flare");
-  flare.style("fill", "white");
-
-  let iris = d3.selectAll(".iris");
-  iris.style("fill", "black");
-
-  let outerEye = d3.selectAll(".outer-eye")
-    .attr("fill", "none")
-    .attr("stroke", "black")
-    .attr("stroke-width", 1);
-
 
   let path = svg.append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
       .attr("fill", "none")
-      .attr("stroke-width", 21)
+      .attr("stroke-width", 10)
       .attr("stroke-linejoin", "round")
     .selectAll("path")
     .data(["cyan", "magenta", "yellow"])
@@ -41,13 +39,15 @@
       .datum(function(d, i) {
         return d3.radialLine()
             .curve(d3.curveLinearClosed)
-            .angle(function(a) { return a; })
+            .angle(function(a) {
+              return a;
+            })
             .radius(function(a) {
-              let time = d3.now() / 750;
-              let circumference = 195;
-              let waveAmplitude = 40;
-              let waveFrequency = 4;
-              return circumference + Math.cos(a * waveFrequency - i * 2 * Math.PI / 3 + time) * Math.pow((1.05 + Math.cos(a - time)) / 2, 12) * waveAmplitude;
+              let speed = d3.now() / 400;
+              let circumference = 290;
+              let waveAmplitude = 23;
+              let waveFrequency = 6;
+              return circumference + Math.cos(a * waveFrequency - i * 2 * Math.PI / 3 + speed) * Math.pow((1.05 + Math.cos(a - speed)) / 2, 12) * waveAmplitude;
             });
       });
 
