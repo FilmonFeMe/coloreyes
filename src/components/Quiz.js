@@ -66,10 +66,9 @@ class Quiz extends Component {
   }
 
   render() {
-    // console.log(currentQuestion + " " + this.state.answers)
     let currentQuestion = this.state.answers.length;
     if(currentQuestion == 1 && this.computeResults() == 0){
-      currentQuestion = 17;
+      currentQuestion = this.props.numberOfQuestions;
     }
     if(currentQuestion >= this.questions.length){
       return(
@@ -80,12 +79,11 @@ class Quiz extends Component {
     return (
       <div id="quiz-layout">
         <div id="plate">
-          {/*<p> Plate {currentQuestion + 1} of {this.questions.length} </p>*/}
           <Plates testType={question.testType} number={question.number} />
         </div>
         <div id="section2">
           <div id="progress">
-            <Bar progress={this.state.progress}/>
+            <Bar className="bar-class" progress={this.state.progress}/>
           </div>
           <div id="numpad">
             <Answers onAnswerClicked = { this.onAnswerClicked } />
