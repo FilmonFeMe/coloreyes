@@ -7,7 +7,7 @@ class Logo extends Component {
   render() {
     return (
       <Link to="/">
-        <svg width="100" height="100">
+        <svg width="500" height="500">
         </svg>
       </Link>
     )
@@ -39,7 +39,7 @@ class Logo extends Component {
     svg.append("circle")
       .attr("class", "outer-ring")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
-      .attr("r", width * .38)
+      .attr("r", width * .35)
       .attr("fill", "none")
       .attr("stroke", "blue")
       .attr("stroke-width", 0.5)
@@ -48,7 +48,7 @@ class Logo extends Component {
     let path = svg.append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
       .attr("fill", "none")
-      .attr("stroke-width", width * .0314)
+      .attr("stroke-width", 5)
       .attr("stroke-linejoin", "round")
     .selectAll("path")
     .data(["cyan", "magenta", "yellow"])
@@ -62,10 +62,10 @@ class Logo extends Component {
         return a;
       })
       .radius(function(a) {
-        let speed = d3.now() / 500;
-        let circumference = width * .38;
-        let waveAmplitude = width * .053;
-        let waveFrequency = width * .079;
+        let speed = d3.now() / 1500;
+        let circumference = width * .35;
+        let waveAmplitude = width * .03;
+        let waveFrequency = width * .02;
         return circumference + Math.cos(a * waveFrequency - i * 2 * Math.PI / 3 + speed) * Math.pow((1.05 + Math.cos(a - speed)) / 2, 12) * waveAmplitude;
       });
     });
