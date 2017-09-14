@@ -420,10 +420,9 @@ M  E  D  I  A    Q  U  E  R  I  E  S
 
 .sm-share {
   width: 50px;
-  float: left;
+  float: center;
   height: 50px;
   margin: 1em;
-  text-align: center;
 }
 
 .sm-join {
@@ -432,4 +431,29 @@ M  E  D  I  A    Q  U  E  R  I  E  S
 
 .fb-join {
   width: 120px;
+}
+
+
+@media (max-width: 1000px)
+{
+  #progress
+  {
+    display:none;
+  }
+  #progressLine
+  {
+    display:inline;
+  }
+}
+
+@media (min-width: 1001px)
+{
+  #progressLine
+  {
+    display:none;
+  }
+  #progress
+  {
+    display:inline;
+  }
 }
