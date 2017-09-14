@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Chart from './Chart'
 
 class HueResult extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class HueResult extends Component {
       return (
         <div>
             <h1>Results</h1>
-            <canvas id="myChart" width="400" height="400"></canvas>
+            <Chart {...this.props}/>
        </div>
       );
     }
