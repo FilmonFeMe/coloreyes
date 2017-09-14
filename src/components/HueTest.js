@@ -101,7 +101,9 @@ class HueTest extends Component {
       )
     }
     return (
-      <div calssName="Hues">
+      <div id="container-hue">
+
+      <div className="Hues">
        <h1>Hue Test</h1>
         <div className="instructions">
           <h2>Instructions:</h2>
@@ -116,6 +118,7 @@ class HueTest extends Component {
         <SortableList row={this.state.row3} onSortEnd={this.onSortEnd3} firstBox={"#549789"} lastBox={"#8088a5"}/>
         <SortableList row={this.state.row4} onSortEnd={this.onSortEnd4} firstBox={"#8088a5"} lastBox={"#ad7776"}/>
         <button type="button" onClick={this.generateResults}>Done</button>
+      </div>
       </div>
     );
   }
