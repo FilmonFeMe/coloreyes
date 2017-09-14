@@ -16,16 +16,7 @@ import HueTest from './components/HueTest.js'
 
 
 ReactDOM.render(
-<<<<<<< HEAD
-<Router>
-    <div>
-    <Logo></Logo>
-      <Navbar></Navbar>
-      <hr/>
-      <Header></Header>
-      <Route exact path="/" component={Home}/>
-      {/*<Route exact path="/" component={OtherComponent}/>*/}
-=======
+
     <Router>
       <div>
         <Navbar></Navbar>
@@ -33,7 +24,6 @@ ReactDOM.render(
         <Header></Header>
         <Route exact path="/" component={Home}/>
         {/*<Route exact path="/" component={OtherComponent}/>*/}
->>>>>>> development
 
         <Route path="/instructions" component={Instruction}/>
         <Route path="/quiz" component={App}/>
