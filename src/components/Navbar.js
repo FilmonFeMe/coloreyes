@@ -7,7 +7,9 @@ class NavComponent extends Component{
 		return (
 			<nav>
 	      <Link to="/">
-				<div className="logo"></div>
+				<div className="logo">
+					<Logo />
+				</div>
 				</Link><span> | </span>
 	      <Link to="/about-us">About Us</Link><span> | </span>
 	      <Link to="/contact-us">Contact Us</Link><span> | </span>
