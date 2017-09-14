@@ -359,6 +359,37 @@ M  E  D  I  A    Q  U  E  R  I  E  S
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 /*   COLORBLIND VIEW CSS   */
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+.munsell-button {
+  /*border: 1px solid red;*/
+  align-self: center;
+  position: absolute;
+  top: 150px;
+  right: 10px;
+
+  order: 0;
+}
+
+#container-hue{
+  /*border: 1px solid red;*/
+}
+
+.a-flex-row-class{
+  display:flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.Hues {
+  display: flex;
+  flex-direction: column;
+  width: 350px; /* this is a hack, fix back to 700 and get the phone version to be this */
+}
+
+html, body {
+  overflow: hidden;
+}
 
 #outputDiv canvas {
   width: 100%;
