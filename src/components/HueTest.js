@@ -56,30 +56,50 @@ class HueTest extends Component {
       row1Score:0,
       row2Score:0,
       row3Score:0,
-      row4Score:0
+      row4Score:0,
+      results:false
     };
     this.generateResults = this.generateResults.bind(this);
   }
 
   generateResults(){
-    // console.log(this.state)
-    console.log(hues1)
-    let score = 0;
+    var score1=0, score2=0, score3=0, score4 = 0;
     for(var i=0; i < this.state.row1.length; i++){
-      // console.log(this.state.row1[i])
       if(hues1[i] == this.state.row1[i]){
-        console.log(score++)
-        // score++;
+        score1++;
       }
     }
+    for(var i=0; i < this.state.row2.length; i++){
+      if(hues2[i] == this.state.row2[i]){
+        score2++;
+      }
+    }
+    for(var i=0; i < this.state.row3.length; i++){
+      if(hues3[i] == this.state.row3[i]){
+        score3++;
+      }
+    }
+    for(var i=0; i < this.state.row4.length; i++){
+      if(hues4[i] == this.state.row4[i]){
+        score4++;
+      }
+    }
+    // console.log(score)
     this.setState({
-      row1Score:score
+      row1Score:score1,
+      row2Score:score2,
+      row3Score:score3,
+      row4Score:score4,
+      results:true
     });
-    console.log(this.state.row1Score)
   }
 
   render() {
-    // this.shuffleRows;
+    if(this.state.results){
+      return(
+        <HueResult {...this.state}/>
+      )
+    }
     return (
       <div calssName="Hues">
        <h1>Hue Test</h1>
@@ -88,7 +108,6 @@ class HueTest extends Component {
           <SortableList row={this.state.row3} onSortEnd={this.onSortEnd3} firstBox={"#549789"} lastBox={"#8088a5"}/>
           <SortableList row={this.state.row4} onSortEnd={this.onSortEnd4} firstBox={"#8088a5"} lastBox={"#ad7776"}/>
           <button type="button" onClick={this.generateResults}>Get Results</button>
-          {/* <HueResult /> */}
       </div>
     );
   }
@@ -97,7 +116,6 @@ class HueTest extends Component {
     this.setState({
       row1: arrayMove(this.state.row1, oldIndex, newIndex)
     });
-    console.log(oldIndex+" "+newIndex)
   }
 
   onSortEnd2 = ({oldIndex, newIndex}) => {
