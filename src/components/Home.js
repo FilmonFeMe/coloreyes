@@ -9,10 +9,10 @@ class Home extends Component {
       <div className="logo">
         <Logo />
       </div>
+        <p>Approximately 8.0% of males and 0.5% of females are colorblind: that's about 4.5% of the human population.  One common misconception is that colorblindness can only be inherited; color vision deficiencies can also be acquired later in life as a result of disease, aging, or certain medications.</p>
 
-      <img className="homepage-image" src="/images/homepage-image.jpg" alt="Home"/>
+        <p>The most widely used method for detecting and measuring color vision deficiencies is though the Ishihara color test.  Find out now if you are colorblind, and learn what you can do to avoid colorblindness later in life.</p>
 
-        <p>Welcome to our color blindness test!!!</p>
         <Link to="/instructions"><button>Take the Test</button></Link>
       </div>
     );
