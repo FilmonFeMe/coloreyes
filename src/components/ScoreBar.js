@@ -27,7 +27,7 @@ class ScoreBar extends Component{
         bar.path.setAttribute('stroke', state.color);
         var value = Math.round(bar.value() * 100);
         if (value === 0) {
-          bar.setText('0%');
+          bar.setText("Try again.");
         } else {
           bar.setText("Score: "+value+"%");
         }
