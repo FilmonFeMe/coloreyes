@@ -21,34 +21,42 @@ class Logo extends Component {
       height = +svg.attr("height"),
       angles = d3.range(0, 2 * Math.PI, Math.PI / 200);
 
+
     // create iris
-    svg.append("circle")
+
+      svg.append("circle")
       .attr("class", "iris")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
       .attr("r", width * .27)
+      .attr("stroke", "black")
+      .attr("stroke-width", 10)
       .attr("fill", "black")
 
+
     // create flare
+    var radialGradient = svg.append("defs")
+    .append("radialGradient")
+    .attr("id", "iris-gradient");
+
+    radialGradient.append("stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#cee5ff");
+
+    radialGradient.append("stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#000000");
+
     svg.append("circle")
       .attr("class", "iris")
-      .attr("transform", "translate(" + (6/5) * width / 2 + "," + (4/5) * height / 2 + ")")
-      .attr("r", width * .053)
-      .attr("fill", "white")
-
-      // create outer ring
-    svg.append("circle")
-      .attr("class", "outer-ring")
-      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
-      .attr("r", width * .35)
-      .attr("fill", "none")
-      .attr("stroke", "blue")
-      .attr("stroke-width", 0.5)
+      .attr("transform", "translate(" + (6.1/5) * width / 2 + "," + (3.8/5) * height / 2 + ")")
+      .attr("r", width * .09)
+      .attr("fill", "url(#iris-gradient)")
 
 
     let path = svg.append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
       .attr("fill", "none")
-      .attr("stroke-width", 5)
+      .attr("stroke-width", 7)
       .attr("stroke-linejoin", "round")
     .selectAll("path")
     .data(["cyan", "magenta", "yellow"])
@@ -62,10 +70,10 @@ class Logo extends Component {
         return a;
       })
       .radius(function(a) {
-        let speed = d3.now() / 1500;
-        let circumference = width * .35;
-        let waveAmplitude = width * .03;
-        let waveFrequency = width * .02;
+        let speed = d3.now() / 1000;
+        let circumference = width * .39;
+        let waveAmplitude = width * .023;
+        let waveFrequency = width * .01;
         return circumference + Math.cos(a * waveFrequency - i * 2 * Math.PI / 3 + speed) * Math.pow((1.05 + Math.cos(a - speed)) / 2, 12) * waveAmplitude;
       });
     });
