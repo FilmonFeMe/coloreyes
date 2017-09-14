@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import NavbarLogo from './NavbarLogo.js';
+import '../stylesheets/components/navbar.css';
 
 class NavComponent extends Component{
 	render() {
 		return (
 
 			<nav>
-				<Link to="/">Home</Link><span> | </span>
-				<Link to="/instructions">Color Blindness Test</Link><span> | </span>
-				<Link to="/hue-test">Hue Test</Link><span> | </span>
-				<Link to="/color-view">Color Blindness Simulator</Link><span> | </span>
-	      <Link to="/about-us">About Us</Link><span> | </span>
-	      <Link to="/contact-us">Contact Us</Link>
+				<Link to="/">HOME</Link>
+				<Link to="/instructions">CB TEST</Link>
+				<Link to="/hue-test">HUE TEST</Link>
+				<Link to="/color-view">CB SIMULATOR</Link>
+	      <Link to="/about-us">ABOUT US</Link>
+	      <Link to="/contact-us">CONTACT US</Link>
 			</nav>
 		);
 	}
