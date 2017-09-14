@@ -25,6 +25,7 @@ class Result extends Component {
         <div className="results">
           <ScoreBar score={0}/>
           <div id="interpretation">{this.state.errorMessage}</div>
+          <br />
           <SocialMedia message={this.state.errorMessage}/>
           <div id="disclaimer">{this.state.disclaimer}</div>
         </div>
@@ -34,6 +35,7 @@ class Result extends Component {
         <div className="results">
           <ScoreBar score={this.state.score}/>
           <div id="interpretation">{this.state.severe}</div>
+          <br />
           <SocialMedia message={this.state.severe}/>
           <div id="disclaimer">{this.state.disclaimer}</div>
         </div>
@@ -43,6 +45,7 @@ class Result extends Component {
         <div className="results">
           <ScoreBar score={this.state.score}/>
           <div id="interpretation">{this.state.moderate}</div>
+          <br />
           <SocialMedia message={this.state.moderate}/>
           <div id="disclaimer">{this.state.disclaimer}</div>
         </div>
@@ -52,6 +55,7 @@ class Result extends Component {
         <div className="results">
           <ScoreBar score={this.state.score}/>
           <div id="interpretation">{this.state.mild}</div>
+          <br />
           <SocialMedia message={this.state.mild}/>
           <div id="disclaimer">{this.state.disclaimer}</div>
         </div>
@@ -61,6 +65,7 @@ class Result extends Component {
         <div className="results">
           <ScoreBar score={this.state.score}/>
           <div id="interpretation">{this.state.perfect}</div>
+          <br />
           <SocialMedia message={this.state.perfect}/>
           <div id="disclaimer">{this.state.disclaimer}</div>
         </div>
@@ -70,6 +75,7 @@ class Result extends Component {
         <div className="results">
           <ScoreBar score={this.state.score}/>
           <div id="interpretation">{this.state.normal}</div>
+          <br />
           <SocialMedia message={this.state.normal}/>
           <div id="disclaimer">{this.state.disclaimer}</div>
         </div>
