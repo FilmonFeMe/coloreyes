@@ -19,7 +19,7 @@ class Result extends Component {
       return(
         <div className="results">
           <div id="score">
-            <ScoreBar score={this.state.score}/>
+            <ScoreBar score={0}/>
           </div>
           <p>The answer provided indicates a difficulty viewing and/or interpreting the illustration.</p>
           <p><strong>Disclaimer:</strong> {this.state.disclaimer}</p>
