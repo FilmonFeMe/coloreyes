@@ -102,19 +102,22 @@ class HueTest extends Component {
     }
     return (
       <div id="container-hue">
-      <div className="Hues">
-           <h1>Hue Test</h1>
 
-        <div className="a-flex-row-class">
-          <SortableList row={this.state.row1} onSortEnd={this.onSortEnd1} firstBox={"#ac7672"} lastBox={"#8f8c4a"}/>
-          <SortableList row={this.state.row2} onSortEnd={this.onSortEnd2} firstBox={"#8f8c4a"} lastBox={"#549789"}/>
-          <SortableList row={this.state.row3} onSortEnd={this.onSortEnd3} firstBox={"#549789"} lastBox={"#8088a5"}/>
-          <SortableList row={this.state.row4} onSortEnd={this.onSortEnd4} firstBox={"#8088a5"} lastBox={"#ad7776"}/>
-          {/* <HueResult /> */}
-          </div>
-                  <div className="a-flex-row-class space-between">
-          <button className="munsell-button" type="button" onClick={this.generateResults}>Get Results</button>
+      <div className="Hues">
+       <h1>Hue Test</h1>
+        <div className="instructions">
+          <h2>Instructions:</h2>
+          <ul>
+            <li>Sort all chips in each colum by color hue.</li>
+            <li>The top and bottom chips are fixed.</li>
+            <li>Click "Done" once you finish sorting.</li>
+          </ul>
         </div>
+        <SortableList row={this.state.row1} onSortEnd={this.onSortEnd1} firstBox={"#ac7672"} lastBox={"#8f8c4a"}/>
+        <SortableList row={this.state.row2} onSortEnd={this.onSortEnd2} firstBox={"#8f8c4a"} lastBox={"#549789"}/>
+        <SortableList row={this.state.row3} onSortEnd={this.onSortEnd3} firstBox={"#549789"} lastBox={"#8088a5"}/>
+        <SortableList row={this.state.row4} onSortEnd={this.onSortEnd4} firstBox={"#8088a5"} lastBox={"#ad7776"}/>
+        <button type="button" onClick={this.generateResults}>Done</button>
       </div>
       </div>
     );
