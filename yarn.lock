@@ -5259,11 +5259,7 @@ promise@^7.0.3, promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-<<<<<<< HEAD
-prop-types@^15.5.10, prop-types@^15.5.4:
-=======
 prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7:
->>>>>>> development
   version "15.5.10"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
@@ -5415,8 +5411,6 @@ react-image-file@^0.1.0:
   dependencies:
     react "^0.14.3"
 
-<<<<<<< HEAD
-=======
 react-progressbar.js@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/react-progressbar.js/-/react-progressbar.js-0.2.0.tgz#ff96f0fabd8f0f7d4411b3630b1d2016c38df625"
@@ -5426,7 +5420,6 @@ react-progressbar.js@^0.2.0:
     react "^15.0.1"
     react-dom "^15.0.1"
 
->>>>>>> development
 react-router-dom@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.2.tgz#c8a81df3adc58bba8a76782e946cbd4eae649b8d"
