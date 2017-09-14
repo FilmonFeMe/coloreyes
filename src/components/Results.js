@@ -9,45 +9,69 @@ class Result extends Component {
 
     this.state = {
       score: (this.props.numCorrect - 1)/(this.props.numberOfQuestions - 1),
-      disclaimer: "The information provided by Filmon Mengisteab is not a substitute for professional medical advice, diagnosis, or treatment; it is intended only for general informational purposes.   If you have any concerns or questions about your health, consult with your physician or health-care professional."
+      disclaimer: "This test result is not a diagnosis. Only an optometrist is fit to evaluate your visual acuity.",
+      errorMessage: "The answer provided indicates difficulty viewing and/or interpreting the illustration.",
+      severe: "Severe difficulty in identifying the patters. You're probably color blind.",
+      moderate: "Moderate difficulty in identifying the patters. You might be red or green color blind.",
+      mild: "Mild difficulty in identifying the patters. It's possible that you are red or green color blind.",
+      normal: "You have a normal ability to distinguish between red and green colors.",
+      perfect: "Perfect score! Your visual acuity is higher than the avarege!"
     };
   }
 
   render() {
-
-    if (this.props.numCorrect == 0){
+    if (this.state.score < 0) {
       return(
         <div className="results">
-          <div id="score">
-            <ScoreBar score={0}/>
-          </div>
-          <p>The answer provided indicates a difficulty viewing and/or interpreting the illustration.</p>
-          <p><strong>Disclaimer:</strong> {this.state.disclaimer}</p>
-          <SocialMedia message="The answer provided indicates a difficulty viewing and/or interpreting the illustration."/>
+          <ScoreBar score={0}/>
+          <div id="interpretation">{this.state.errorMessage}</div>
+          <SocialMedia message={this.state.errorMessage}/>
+          <div id="disclaimer">{this.state.disclaimer}</div>
         </div>
       );
-    }
-    else if (this.score < .90) {
+    }else if (this.state.score < .50) {
       return(
         <div className="results">
-          <div id="score">
-            <ScoreBar score={this.state.score}/>
-          </div>
-          <p>The answers provided indicate a difficulty interpreting red and green colors.  Red and/or green may appear as one color, or as grey.  Colors which contain hues of red or green may also be impacted.  For example, purple is a mixture of both red and blue; therefore, purple may appear indistinguishable from blue to someone affected by red-green colorblindness.</p>
-          <p><strong>Disclaimer:</strong> {this.state.disclaimer}</p>
-          <SocialMedia message="The answers provided indicate a difficulty interpreting red and green colors."/>
+          <ScoreBar score={this.state.score}/>
+          <div id="interpretation">{this.state.severe}</div>
+          <SocialMedia message={this.state.severe}/>
+          <div id="disclaimer">{this.state.disclaimer}</div>
+        </div>
+        );
+    }else if (this.state.score < .70) {
+      return(
+        <div className="results">
+          <ScoreBar score={this.state.score}/>
+          <div id="interpretation">{this.state.moderate}</div>
+          <SocialMedia message={this.state.moderate}/>
+          <div id="disclaimer">{this.state.disclaimer}</div>
         </div>
       );
-    }
-    else {
+    }else if (this.state.score < .85) {
       return(
         <div className="results">
-          <div id="score">
-            <ScoreBar score={this.state.score}/>
-          </div>
-          <p>The answers provided indicate an normal ability to distinguish between red and green colors.</p>
-          <p><strong>Disclaimer:</strong> {this.state.disclaimer}</p>
-          <SocialMedia message="The answers provided indicate an normal ability to distinguish between red and green colors."/>
+          <ScoreBar score={this.state.score}/>
+          <div id="interpretation">{this.state.mild}</div>
+          <SocialMedia message={this.state.mild}/>
+          <div id="disclaimer">{this.state.disclaimer}</div>
+        </div>
+      );
+    }else if (this.state.score == 1) {
+      return(
+        <div className="results">
+          <ScoreBar score={this.state.score}/>
+          <div id="interpretation">{this.state.perfect}</div>
+          <SocialMedia message={this.state.perfect}/>
+          <div id="disclaimer">{this.state.disclaimer}</div>
+        </div>
+        );
+    }else {
+      return(
+        <div className="results">
+          <ScoreBar score={this.state.score}/>
+          <div id="interpretation">{this.state.normal}</div>
+          <SocialMedia message={this.state.normal}/>
+          <div id="disclaimer">{this.state.disclaimer}</div>
         </div>
       );
     }
