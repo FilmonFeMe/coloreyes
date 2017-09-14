@@ -1,9 +1,17 @@
+html * {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
   padding-left: 5px;
   padding-right: 5px;
-/*  border: 1px solid red;
-*/}
+  margin: 0px;
+}
+
+nav {
+  padding-top: 20px;
+}
 
 nav {
   padding-top: 20px;
@@ -21,6 +29,7 @@ nav {
 
 body {
  font-family: calibri;
+ /*border: 3px solid green;*/
 }
 
 input[type=button] {
@@ -246,9 +255,9 @@ canvas.plates {
 }
 
 .Hues {
-  display: felx;
-  flex-direction: row;
-  width: 700px;
+  display: flex;
+  flex-direction: column;
+  width: 700px; /* this is a hack, fix back to 700 and get the phone version to be this */
 }
 
 #section2 {
@@ -265,17 +274,16 @@ canvas.plates {
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//*
-M  E  D  I  A    Q  U  E  R  I  E  S
+M  E  D  I  A    Q  U  E  R  I  E  S 
 *//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 
-
-@media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 667px)
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
+  and (orientation: portrait) { 
   nav {
   padding-top: 10px;
   }
@@ -298,9 +306,9 @@ M  E  D  I  A    Q  U  E  R  I  E  S
   }
 
   .progressbar {
-  width: 35% !important;
-  left: 10% !important;
-  top: 66% !important;
+  width: 35% !important; 
+  left: 10% !important; 
+  top: 66% !important; 
   position: absolute !important;
   }*/
 
@@ -321,7 +329,6 @@ M  E  D  I  A    Q  U  E  R  I  E  S
     margin: 0 auto;
     height: 0px;
   }
-
 }
 
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
@@ -334,8 +341,7 @@ M  E  D  I  A    Q  U  E  R  I  E  S
     border: 1px solid #EFEFEF;
     border-radius: 3px;
     outline: none;
-
-    width: 44px;
+    width: 60px;
     height: 420px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
@@ -348,6 +354,37 @@ M  E  D  I  A    Q  U  E  R  I  E  S
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 /*   COLORBLIND VIEW CSS   */
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+.munsell-button {
+  /*border: 1px solid red;*/
+  align-self: center;
+  position: absolute;
+  top: 150px;
+  right: 10px;
+
+  order: 0;
+}
+
+#container-hue{
+  /*border: 1px solid red;*/
+}
+
+.a-flex-row-class{
+  display:flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.Hues {
+  display: flex;
+  flex-direction: column;
+  width: 350px; /* this is a hack, fix back to 700 and get the phone version to be this */
+}
+
+html, body {
+  overflow: hidden;
+}
 
 #outputDiv canvas {
   width: 100%;

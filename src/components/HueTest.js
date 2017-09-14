@@ -101,13 +101,23 @@ class HueTest extends Component {
       )
     }
     return (
-      <div calssName="Hues">
+      <div className="Hues">
        <h1>Hue Test</h1>
-          <SortableList row={this.state.row1} onSortEnd={this.onSortEnd1} firstBox={"#ac7672"} lastBox={"#8f8c4a"}/>
-          <SortableList row={this.state.row2} onSortEnd={this.onSortEnd2} firstBox={"#8f8c4a"} lastBox={"#549789"}/>
-          <SortableList row={this.state.row3} onSortEnd={this.onSortEnd3} firstBox={"#549789"} lastBox={"#8088a5"}/>
-          <SortableList row={this.state.row4} onSortEnd={this.onSortEnd4} firstBox={"#8088a5"} lastBox={"#ad7776"}/>
-          <button type="button" onClick={this.generateResults}>Get Results</button>
+        <div className="instructions">
+          <h2>Instructions:</h2>
+          <ul>
+            <li>Sort all chips in each colum by color hue.</li>
+            <li>The top and bottom chips are fixed.</li>
+            <li>Click "Done" once you finish sorting.</li>
+          </ul>
+        </div>
+        <div id="container-hue">
+        <SortableList row={this.state.row1} onSortEnd={this.onSortEnd1} firstBox={"#ac7672"} lastBox={"#8f8c4a"}/>
+        <SortableList row={this.state.row2} onSortEnd={this.onSortEnd2} firstBox={"#8f8c4a"} lastBox={"#549789"}/>
+        <SortableList row={this.state.row3} onSortEnd={this.onSortEnd3} firstBox={"#549789"} lastBox={"#8088a5"}/>
+        <SortableList row={this.state.row4} onSortEnd={this.onSortEnd4} firstBox={"#8088a5"} lastBox={"#ad7776"}/>
+        <button type="button" onClick={this.generateResults}>Done</button>
+      </div>
       </div>
     );
   }

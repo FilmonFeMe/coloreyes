@@ -6,10 +6,8 @@ class Logo extends Component {
 
   render() {
     return (
-      <Link to="/">
         <svg width="500" height="500">
         </svg>
-      </Link>
     )
   };
 
@@ -21,34 +19,65 @@ class Logo extends Component {
       height = +svg.attr("height"),
       angles = d3.range(0, 2 * Math.PI, Math.PI / 200);
 
+
     // create iris
-    svg.append("circle")
+    let irisGradient = svg.append("defs")
+    .append("radialGradient")
+    .attr("id", "iris-gradient");
+
+    irisGradient.append("stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#000000");
+
+    irisGradient.append("stop")
+    .attr("offset", "33%")
+    .attr("stop-color", "#000000");
+
+    irisGradient.append("stop")
+    .attr("offset", "42%")
+    .attr("stop-color", "#42d2ff");
+
+    irisGradient.append("stop")
+    .attr("offset", "93%")
+    .attr("stop-color", "#000000");
+
+    irisGradient .append("stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#000000");
+
+      svg.append("circle")
       .attr("class", "iris")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
       .attr("r", width * .27)
-      .attr("fill", "black")
+      .attr("stroke", "black")
+      .attr("stroke-width", 0)
+      .attr("fill", "url(#iris-gradient)")
+
 
     // create flare
+    let flareGradient = svg.append("defs")
+    .append("radialGradient")
+    .attr("id", "flare-gradient");
+
+    flareGradient.append("stop")
+    .attr("offset", "10%")
+    .attr("stop-color", "#e0e0e0");
+
+    flareGradient.append("stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#000000");
+
     svg.append("circle")
       .attr("class", "iris")
-      .attr("transform", "translate(" + (6/5) * width / 2 + "," + (4/5) * height / 2 + ")")
-      .attr("r", width * .053)
-      .attr("fill", "white")
-
-      // create outer ring
-    svg.append("circle")
-      .attr("class", "outer-ring")
-      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
-      .attr("r", width * .35)
-      .attr("fill", "none")
-      .attr("stroke", "blue")
-      .attr("stroke-width", 0.5)
+      .attr("transform", "translate(" + 1.06 * width / 2 + "," + .94 * height / 2 + ")")
+      .attr("r", width * .02)
+      .attr("fill", "url(#flare-gradient)")
 
 
     let path = svg.append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
       .attr("fill", "none")
-      .attr("stroke-width", 5)
+      .attr("stroke-width", 6)
       .attr("stroke-linejoin", "round")
     .selectAll("path")
     .data(["cyan", "magenta", "yellow"])
@@ -62,10 +91,10 @@ class Logo extends Component {
         return a;
       })
       .radius(function(a) {
-        let speed = d3.now() / 1500;
-        let circumference = width * .35;
-        let waveAmplitude = width * .03;
-        let waveFrequency = width * .02;
+        let speed = d3.now() / 1042;
+        let circumference = width * .303;
+        let waveAmplitude = width * .021;
+        let waveFrequency = width * .014;
         return circumference + Math.cos(a * waveFrequency - i * 2 * Math.PI / 3 + speed) * Math.pow((1.05 + Math.cos(a - speed)) / 2, 12) * waveAmplitude;
       });
     });
