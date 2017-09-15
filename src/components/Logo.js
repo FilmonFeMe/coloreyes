@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import * as d3 from "d3";
-import { Link } from 'react-router-dom';
 import '../stylesheets/components/logo.css';
 
 class NavbarLogo extends Component {
