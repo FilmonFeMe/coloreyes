@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import NavbarLogo from './NavbarLogo.js';
+import Logo from './Logo.js';
 import '../stylesheets/components/navbar.css';
 
 class NavComponent extends Component{
@@ -9,7 +9,7 @@ class NavComponent extends Component{
 		return (
 
 			<nav>
-				<Link to="/">HOME</Link>
+				<Link to="/"> <Logo /> </Link>
 				<Link to="/instructions">CB TEST</Link>
         <Link to="/hue-test" onClick={this.resetHueTest}>HUE TEST</Link>
 				<Link to="/color-view">CB SIMULATOR</Link>
