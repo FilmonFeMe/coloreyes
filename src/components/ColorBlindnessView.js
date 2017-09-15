@@ -33,7 +33,7 @@ class ColorBlindnessView extends Component {
     };
 
     return (
-      <div><p>Display how your favorite website looks like when you are color blind!!</p>
+      <div><p>Try the simulator! Choose between different types of color blindness.</p>
         <div id="aboutBox" className="boxed">
         </div>
         <div className="container">

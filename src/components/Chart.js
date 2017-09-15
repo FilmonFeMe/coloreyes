@@ -9,23 +9,26 @@ class Chart extends Component{
       }
       
     render () { 
-
+        let [green, yellow, red, blue] = ["#ff1100", "#fff300", "#00ff6e", "#0037ff"]; 
     return (
     <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={[
-        { subject: 'Hue 1', A: this.props.row1Score, fullMark: 22 },
-        { subject: 'Hue 2', A: this.props.row2Score, fullMark: 22 },
-        { subject: 'Hue 3', A: this.props.row3Score, fullMark: 22 },
-        { subject: 'Hue 4', A: this.props.row4Score, fullMark: 22 }
+        { subject: 'Yellow - Red', A: this.props.row1Score, B:this.props.row2Score, fullMark: 20 },
+        { subject: 'Green - Yellow', B: this.props.row2Score, C:this.props.row3Score, fullMark: 20 },
+        { subject: 'Green - Blue', C: this.props.row3Score, D:this.props.row4Score, fullMark: 20 },
+        { subject: 'Blue - Red', D: this.props.row4Score, A:this.props.row1Score, fullMark: 20 }
         ]}>
-        <Radar name="Results" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6}/>
-        {/* <Radar name="Lily" dataKey="B" stroke="#82ca9d" fill="#82ca9d" fillOpacity={0.6}/> */}
+        <Radar name="Green Acuity" dataKey="A" stroke={green} fill={green} fillOpacity={0.6}/>
+        <Radar name="Yellow Acuity" dataKey="B" stroke={yellow} fill={yellow} fillOpacity={0.6}/>
+        <Radar name="Red Acuity" dataKey="C" stroke={red} fill={red} fillOpacity={0.6}/>
+        <Radar name="Blue Acuity" dataKey="D" stroke={blue} fill={blue} fillOpacity={0.6}/>
         <PolarGrid />
         <Legend />
         <PolarAngleAxis dataKey="subject" />
-        <PolarRadiusAxis angle={30} domain={[0, 22]}/>
+        <PolarRadiusAxis angle={90} domain={[0, 20]}/>
     </RadarChart>
         );
     }
+
 }
 
 export default Chart;
