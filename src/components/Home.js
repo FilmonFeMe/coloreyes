@@ -8,7 +8,6 @@ class Home extends Component {
     return (
 
       <div id="home">
-        <div className="logo"><Logo /></div>
         <div id="tests">
             <p id="intro">Approximately 8.0% of males and 0.5% of females are color blind- that's about 4.5% of the human population.  One common misconception is that color blindness can only be inherited; color blindness can also be acquired later in life as a result of disease, aging, or certain medications.</p>
           <div id="ishihara-test">
