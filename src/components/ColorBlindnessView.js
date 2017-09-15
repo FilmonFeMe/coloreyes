@@ -40,7 +40,7 @@ class ColorBlindnessView extends Component {
         </div>
         <div className="container">
           <div>
-            <label className="fileContainer">Click here
+            <label className="fileContainer">FILE UPLOAD
             <input type="file" id="fileInput"/></label><span id="loadingIndicator" style={displayNone}>&nbsp;&nbsp;&nbsp;Computing...</span>
             <br />
             <ul id="viewOptions">
