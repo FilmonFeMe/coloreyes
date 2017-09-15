@@ -38,7 +38,9 @@ class ColorBlindnessView extends Component {
         </div>
         <div className="container">
           <div>
-            <input type="file" id="fileInput"/><span id="loadingIndicator" style={displayNone}>&nbsp;&nbsp;&nbsp;Computing...</span>
+            <label className="fileContainer">Click here
+            <input type="file" id="fileInput"/></label><span id="loadingIndicator" style={displayNone}>&nbsp;&nbsp;&nbsp;Computing...</span>
+            <br />
             <ul id="viewOptions">
             <li><label><input type="radio" name="colorblindType" value="Normal" id="defaultCheck"/> Normal</label></li>
             <li><label><input type="radio" name="colorblindType" value="Protanopia"/> Protanopia</label></li>
