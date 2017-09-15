@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import Logo from './Logo.js';
+import NavbarLogo from './NavbarLogo.js';
+import '../stylesheets/components/navbar.css';
 
 class NavComponent extends Component{
 
@@ -12,13 +13,14 @@ class NavComponent extends Component{
 
 	render() {
 		return (
+
 			<nav>
-	      <Link to="/">Home</Link><span> | </span>
-				<Link to="/instructions">Color Blind Quiz</Link><span> | </span>
-	      <Link to="/about-us">About Us</Link><span> | </span>
-	      <Link to="/contact-us">Contact Us</Link><span> | </span>
-		  <Link to="/hue-test" onClick={this.resetHueTest}>Hue Test</Link><span> | </span>
-	      <Link to="/color-view">Color blindness view</Link>
+				<Link to="/">HOME</Link>
+				<Link to="/instructions">CB TEST</Link>
+        <Link to="/hue-test" onClick={this.resetHueTest}>HUE TEST</Link><span> | </span>
+				<Link to="/color-view">CB SIMULATOR</Link>
+	      <Link to="/about-us">ABOUT US</Link>
+	      <Link to="/contact-us">CONTACT US</Link>
 			</nav>
 		);
 	}

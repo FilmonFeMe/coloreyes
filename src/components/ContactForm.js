@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../stylesheets/components/_form.scss';
+import '../stylesheets/components/form.css';
 
 const reactFormContainer = document.querySelector('.react-form-container');
 
