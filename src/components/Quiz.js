@@ -4,6 +4,7 @@ import Answers from './Answers.js'
 import Results from './Results.js'
 import Bar from './Bar.js'
 import MobileBar from './MobileBar.js'
+import '../stylesheets/components/quiz.css';
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);

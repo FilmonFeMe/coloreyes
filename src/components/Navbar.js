@@ -17,7 +17,7 @@ class NavComponent extends Component{
 			<nav>
 				<Link to="/">HOME</Link>
 				<Link to="/instructions">CB TEST</Link>
-        <Link to="/hue-test" onClick={this.resetHueTest}>HUE TEST</Link><span> | </span>
+        <Link to="/hue-test" onClick={this.resetHueTest}>HUE TEST</Link>
 				<Link to="/color-view">CB SIMULATOR</Link>
 	      <Link to="/about-us">ABOUT US</Link>
 	      <Link to="/contact-us">CONTACT US</Link>
