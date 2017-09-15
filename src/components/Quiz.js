@@ -79,6 +79,7 @@ class Quiz extends Component {
     }
     const question = this.questions[currentQuestion];
     return (
+    <div id="main-quiz">
       <div id="quiz-layout">
         <div id="plate">
           <Plates testType={question.testType} number={question.number} />
@@ -97,6 +98,7 @@ class Quiz extends Component {
           </div>
         </div>
       </div>
+    </div>
     );
   }
 }

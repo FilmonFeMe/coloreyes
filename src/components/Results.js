@@ -11,7 +11,7 @@ class Result extends Component {
 
     this.state = {
       score: (this.props.numCorrect - 1)/(this.props.numberOfQuestions - 1),
-      disclaimer: "This test result is not a diagnosis. Only an optometrist is fit to evaluate your visual acuity.",
+      disclaimer: "*This test result is not a diagnosis. Only an optometrist is fit to evaluate your visual acuity.",
       errorMessage: "The answer provided indicates difficulty viewing and/or interpreting the illustration.",
       severe: "Severe difficulty in identifying the patters. You're probably color blind.",
       moderate: "Moderate difficulty in identifying the patters. You might be red or green color blind.",
