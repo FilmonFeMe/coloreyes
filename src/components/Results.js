@@ -41,6 +41,7 @@ class Result extends Component {
           <div id="interpretation">{this.state.severe}</div>
           <br />
           <SocialMedia message={this.state.severe}/>
+          <br/>
           <div id="disclaimer">{this.state.disclaimer}</div>
         </div>
         );
@@ -52,6 +53,7 @@ class Result extends Component {
           <div id="interpretation">{this.state.moderate}</div>
           <br />
           <SocialMedia message={this.state.moderate}/>
+          <br/>
           <div id="disclaimer">{this.state.disclaimer}</div>
         </div>
       );
@@ -63,6 +65,7 @@ class Result extends Component {
           <div id="interpretation">{this.state.mild}</div>
           <br />
           <SocialMedia message={this.state.mild}/>
+          <br/>
           <div id="disclaimer">{this.state.disclaimer}</div>
         </div>
       );
@@ -74,6 +77,7 @@ class Result extends Component {
           <div id="interpretation">{this.state.perfect}</div>
           <br />
           <SocialMedia message={this.state.perfect}/>
+          <br/>
           <div id="disclaimer">{this.state.disclaimer}</div>
         </div>
         );
@@ -83,8 +87,9 @@ class Result extends Component {
           <ScoreBar score={this.state.score}/>
           <br />
           <div id="interpretation">{this.state.normal}</div>
-          <br />
+          <br/>
           <SocialMedia message={this.state.normal}/>
+          <br/>
           <div id="disclaimer">{this.state.disclaimer}</div>
         </div>
       );
