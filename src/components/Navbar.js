@@ -5,12 +5,6 @@ import '../stylesheets/components/navbar.css';
 
 class NavComponent extends Component{
 
-	resetHueTest(){
-        this.setState({
-            results:false
-          });
-      }
-
 	render() {
 		return (
 
