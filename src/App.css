@@ -517,3 +517,44 @@ a:active {
 .fileContainer [type=file] {
     cursor: pointer;
 }
+
+
+/* Home Page */
+
+.bg-1 { 
+  background-color: #35707f; /* Green */
+  color: #ffffff;
+}
+
+.bg-2 { 
+  background-color: #9eebff; /* Green */
+  color: #ffffff;
+}
+
+
+.bg-3 { 
+  background-color: #7ebccc; /* Green */
+  color: #ffffff;
+}
+
+.home-img{
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.img-plate{
+  display: flex;
+  align-items: center;
+}
+
+.img-hue{
+  padding-top:30px;
+}
+
+.padding{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.padding-block-3{
+  padding-left: 50px;
+}
