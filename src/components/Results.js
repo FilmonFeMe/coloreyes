@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SocialMedia from './SocialMedia.js';
 import ScoreBar from './ScoreBar.js';
+import '../stylesheets/components/results.css';
 
 
 class Result extends Component {
@@ -25,6 +26,7 @@ class Result extends Component {
       return(
         <div className="results">
           <ScoreBar score={0}/>
+          <br />
           <div id="interpretation">{this.state.errorMessage}</div>
           <br />
           <SocialMedia message={this.state.errorMessage}/>
@@ -35,6 +37,7 @@ class Result extends Component {
       return(
         <div className="results">
           <ScoreBar score={this.state.score}/>
+          <br />
           <div id="interpretation">{this.state.severe}</div>
           <br />
           <SocialMedia message={this.state.severe}/>
@@ -45,6 +48,7 @@ class Result extends Component {
       return(
         <div className="results">
           <ScoreBar score={this.state.score}/>
+          <br />
           <div id="interpretation">{this.state.moderate}</div>
           <br />
           <SocialMedia message={this.state.moderate}/>
@@ -55,6 +59,7 @@ class Result extends Component {
       return(
         <div className="results">
           <ScoreBar score={this.state.score}/>
+          <br />
           <div id="interpretation">{this.state.mild}</div>
           <br />
           <SocialMedia message={this.state.mild}/>
@@ -65,6 +70,7 @@ class Result extends Component {
       return(
         <div className="results">
           <ScoreBar score={this.state.score}/>
+          <br />
           <div id="interpretation">{this.state.perfect}</div>
           <br />
           <SocialMedia message={this.state.perfect}/>
@@ -75,6 +81,7 @@ class Result extends Component {
       return(
         <div className="results">
           <ScoreBar score={this.state.score}/>
+          <br />
           <div id="interpretation">{this.state.normal}</div>
           <br />
           <SocialMedia message={this.state.normal}/>
