@@ -1,3 +1,9 @@
-.reults {
-  
+#interpretation {
+  padding-top: 10px;
+  font-size: 1.2em; 
+}
+
+#disclaimer {
+  color: gray;
+  font-style: italic;
 }
