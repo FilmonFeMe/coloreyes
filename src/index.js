@@ -20,7 +20,7 @@ ReactDOM.render(
     <Router>
       <div>
         <Navbar></Navbar>
-        <hr/>
+
         <Header></Header>
         <Route exact path="/" component={Home}/>
         {/*<Route exact path="/" component={OtherComponent}/>*/}

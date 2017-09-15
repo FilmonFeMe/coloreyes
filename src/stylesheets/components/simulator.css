@@ -1,0 +1,74 @@
+#simulator {
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 83.75rem;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+#outputDiv canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  display: table;
+  width:100%;
+  height:100%
+}
+.container div {
+  display: table-row;
+}
+
+#dropNotification {
+  position: absolute;
+  top:100px;
+  left: 20px;
+  right:20px;
+  text-align:center;
+  pointer-events: none;
+}
+
+.boxed {
+  background-color: white;
+/*  box-shadow: 5px 5px 2px #999999;
+  border: 1px solid black;
+  border-radius: 10px;*/
+}
+
+#aboutBox {
+  position:absolute;
+  top:50px;
+  left: 25%;
+  width: 50%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#outCanvas {
+/*  width: 1100px;*/
+}
+
+.inactive {
+  display: none;
+}
+
+#viewOptions {
+  list-style: none;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+}
+
+@media (max-width: 640px)
+{
+  #viewOptions
+  {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}

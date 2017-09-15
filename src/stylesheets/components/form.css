@@ -8,7 +8,7 @@ html {
   box-sizing: border-box; }
 
 body {
-  font: 100% 'Roboto', arial, sans-serif;
+  font: 100% 'Noto Sans', 'sans-serif';
   background: #f5f5f5; }
 
 form {
@@ -37,7 +37,6 @@ label {
   display: inline-block;
   margin-bottom: .5rem;
   font-size: .75rem;
-  text-transform: uppercase;
   touch-action: manipulation; }
 
 input,
