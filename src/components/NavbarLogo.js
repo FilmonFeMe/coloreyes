@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import * as d3 from "d3";
 import { Link } from 'react-router-dom';
-import '../stylesheets/components/logo.css';
 
-class NavbarLogo extends Component {
+class Logo extends Component {
 
   render() {
     return (
-        <svg width="500" height="500">
+        <svg width="64" height="64">
         </svg>
     )
   };
@@ -108,4 +107,4 @@ class NavbarLogo extends Component {
   }
 }
 
-export default NavbarLogo;
+export default Logo;

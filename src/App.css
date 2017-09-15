@@ -12,20 +12,6 @@ html, body {
   font-family: 'Noto Sans, sans-serif';
 }
 
-nav {
-  padding-top: 20px;
-}
-
-nav {
-  padding-top: 20px;
-}
-
-.logo {
-    margin: auto;
-      text-align: center;
-}
-
-
 .App {
   text-align: center;
 }
@@ -281,15 +267,11 @@ M  E  D  I  A    Q  U  E  R  I  E  S
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 
-
 @media only screen
   and (min-device-width: 375px)
   and (max-device-width: 667px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
-  nav {
-  padding-top: 10px;
-  }
 /*  .answer-form {
     width: 130px;
     padding-left: 100px;
