@@ -1,4 +1,4 @@
-body {margin:0;}
+/* body {margin:0;}
 
 nav {
   overflow: hidden;
@@ -23,4 +23,8 @@ nav a:hover {
 nav a:active {
     background-color: #ddd;
     color: white;
+} */
+
+nav {
+  margin: 0px !important;
 }

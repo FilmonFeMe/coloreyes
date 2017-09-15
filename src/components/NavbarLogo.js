@@ -41,7 +41,7 @@ class Logo extends Component {
     .attr("offset", "93%")
     .attr("stop-color", "#000000");
 
-    irisGradient .append("stop")
+    irisGradient.append("stop")
     .attr("offset", "100%")
     .attr("stop-color", "#000000");
 

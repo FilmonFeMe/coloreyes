@@ -34,6 +34,7 @@
     "postcss-loader": "2.0.6",
     "promise": "8.0.1",
     "react": "^15.6.1",
+    "react-bootstrap": "^0.31.3",
     "react-dev-utils": "^4.0.1",
     "react-dom": "^15.6.1",
     "react-image-file": "^0.1.0",
