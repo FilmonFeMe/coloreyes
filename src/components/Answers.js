@@ -15,9 +15,7 @@ class Answers extends Component {
   render(){
     return (
       <div className ="answer-form">
-      <div id="label-id">
-        <label>Select an option: </label><br/>
-        </div>
+        <br/>
         <ul className="options">
           {[1,4,7,2,5,8,3,6,9].map((i) =>
             <li key={i}>

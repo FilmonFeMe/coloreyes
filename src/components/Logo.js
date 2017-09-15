@@ -6,7 +6,7 @@ import '../stylesheets/components/logo.css';
 class NavbarLogo extends Component {
   render() {
     return (
-        <svg width="350" height="350">
+        <svg width="100" height="100">
         </svg>
     )
   };
@@ -38,7 +38,7 @@ class NavbarLogo extends Component {
       svg.append("circle")
       .attr("class", "iris")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
-      .attr("r", width * .428)
+      .attr("r", width * .4)
       .attr("stroke", "black")
       .attr("stroke-width", 0)
       .attr("fill", "url(#iris-gradient)")
@@ -65,10 +65,10 @@ class NavbarLogo extends Component {
     let path = svg.append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
       .attr("fill", "none")
-      .attr("stroke-width", 6)
+      .attr("stroke-width", 3)
       .attr("stroke-linejoin", "round")
     .selectAll("path")
-    .data(["cyan", "magenta", "yellow"])
+    .data(["cyan", "magenta", "gold"])
     .enter().append("path")
     .attr("stroke", function(d) { return d; })
     .style("mix-blend-mode", "darken")
@@ -79,10 +79,10 @@ class NavbarLogo extends Component {
         return a;
       })
       .radius(function(a) {
-        let speed = d3.now() / 1042;
-        let circumference = width * .463;
-        let waveAmplitude = width * .021;
-        let waveFrequency = width * .0314;
+        let speed = d3.now() / 420;
+        let circumference = width * .44;
+        let waveAmplitude = width * .02;
+        let waveFrequency = width * .02;
         return circumference + Math.cos(a * waveFrequency - i * 2 * Math.PI / 3 + speed) * Math.pow((1.05 + Math.cos(a - speed)) / 2, 12) * waveAmplitude;
       });
     });

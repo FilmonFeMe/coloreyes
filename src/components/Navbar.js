@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import NavbarLogo from './NavbarLogo.js';
+import Logo from './Logo.js';
 import '../stylesheets/components/navbar.css';
 
 class NavComponent extends Component{
 
 	render() {
 		return (
+
 
 			<nav className="navbar navbar-default">
 			<div className="container">
