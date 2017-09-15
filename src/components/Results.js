@@ -14,9 +14,9 @@ class Result extends Component {
       disclaimer: "*This test result is not a diagnosis. Only an optometrist is fit to evaluate your visual acuity.",
       errorMessage: "The answer provided indicates difficulty viewing and/or interpreting the illustration.",
       severe: "Severe difficulty in identifying the patterns. You may be color blind.",
-      moderate: "Exhibiting moderate difficulty with identifying the patterns. You may be red or green color blind.",
-      mild: "Exhibiting a mild difficulty identifying the patterns. You may be red or green color blind.",
-      normal: "You have demonstrated a normal ability to distinguish between red and green colors.",
+      moderate: "Moderate difficulty with identifying the patterns. You may be red or green color blind.",
+      mild: "Mild difficulty with identifying the patterns. You may be red or green color blind.",
+      normal: "The results show a normal ability to distinguish between red and green colors.",
       perfect: "Perfect score! Your visual acuity is higher than the average!"
     };
   }
