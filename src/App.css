@@ -367,6 +367,12 @@ M  E  D  I  A    Q  U  E  R  I  E  S
   width: 350px; /* this is a hack, fix back to 700 and get the phone version to be this */
 }
 
+.hue-result-chart{
+  display: flex;
+  justify-content: center;
+  margin-top: -50px;
+}
+
 
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 /*   SOCIAL MEDIA CSS   */
