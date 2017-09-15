@@ -8,7 +8,7 @@ nav {
 nav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #f2f2f2 !important;
   text-align: center;
   padding: 16px 20px;
   text-decoration: none;
@@ -16,7 +16,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #00a1ff;
+  background-color: #4169e1;
   color: black;
 }
 

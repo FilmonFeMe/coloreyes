@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import SocialMedia from './SocialMedia.js'
-import ScoreBar from './ScoreBar.js'
+import SocialMedia from './SocialMedia.js';
+import ScoreBar from './ScoreBar.js';
+
 
 class Result extends Component {
 

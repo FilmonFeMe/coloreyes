@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
 import HueResult from './HueResult';
+import '../stylesheets/components/hue.css';
 
 const SortableItem = SortableElement(({value}) =>
   // console.log({this.index})
@@ -15,7 +16,7 @@ const SortableList = SortableContainer(({row, firstBox, lastBox}) => {
         {row.map((value, index) => (
           <SortableItem key={`item-${index}`} index={index} value={value} />
         ))}
-      <div className="SortableItem" style={{"backgroundColor":lastBox,"marginTop":"5px"}}></div>        
+      <div className="SortableItem" style={{"backgroundColor":lastBox,"marginTop":"5px"}}></div>
       </div>
     </div>
   );
@@ -103,7 +104,7 @@ class HueTest extends Component {
     return (
       <div className="Hues">
        <h1>Hue Test</h1>
-        <div className="instructions">
+        <div>
           <h2>Instructions:</h2>
           <ul>
             <li>Sort all chips in each colum by color hue.</li>
@@ -116,8 +117,8 @@ class HueTest extends Component {
         <SortableList row={this.state.row2} onSortEnd={this.onSortEnd2} firstBox={"#8f8c4a"} lastBox={"#549789"}/>
         <SortableList row={this.state.row3} onSortEnd={this.onSortEnd3} firstBox={"#549789"} lastBox={"#8088a5"}/>
         <SortableList row={this.state.row4} onSortEnd={this.onSortEnd4} firstBox={"#8088a5"} lastBox={"#ad7776"}/>
-        <button type="button" onClick={this.generateResults}>Done</button>
-      </div>
+        <p><button type="button" onClick={this.generateResults}>DONE</button></p>
+        </div>
       </div>
     );
   }

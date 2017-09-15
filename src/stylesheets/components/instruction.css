@@ -1,0 +1,10 @@
+#instruction {
+  padding: 2rem;
+  margin-top: 4rem;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 53.75rem;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}

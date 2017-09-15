@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../stylesheets/components/simulator.css';
 
 class ColorBlindnessView extends Component {
 
@@ -33,7 +34,8 @@ class ColorBlindnessView extends Component {
     };
 
     return (
-      <div><p>Try the simulator! Choose between different types of color blindness.</p>
+      <div id="simulator">
+        <h1>Try the simulator!</h1>
         <div id="aboutBox" className="boxed">
         </div>
         <div className="container">
@@ -42,7 +44,7 @@ class ColorBlindnessView extends Component {
             <input type="file" id="fileInput"/></label><span id="loadingIndicator" style={displayNone}>&nbsp;&nbsp;&nbsp;Computing...</span>
             <br />
             <ul id="viewOptions">
-            <li><label><input type="radio" name="colorblindType" value="Normal" id="defaultCheck"/> Normal</label></li>
+            <li><input type="radio" name="colorblindType" value="Normal" id="defaultCheck"/>Normal</li>
             <li><label><input type="radio" name="colorblindType" value="Protanopia"/> Protanopia</label></li>
             <li><label><input type="radio" name="colorblindType" value="Protanomaly"/> Protanomaly</label></li>
             <li><label><input type="radio" name="colorblindType" value="Deuteranopia"/> Deuteranopia</label></li>
@@ -50,7 +52,7 @@ class ColorBlindnessView extends Component {
             <li><label><input type="radio" name="colorblindType" value="Tritanopia"/> Tritanopia</label></li>
             <li><label><input type="radio" name="colorblindType" value="Tritanomaly"/> Tritanomaly</label></li>
             <li><label><input type="radio" name="colorblindType" value="Achromatopsia"/> Achromatopsia</label></li>
-            <li><label><input type="radio" name="colorblindType" value="Achromatomaly"/> Achromatomaly</label></li>
+            <li><label><input type="radio" name="colorblindType" value="Achromatomaly"/>Achromatomaly</label></li>
             </ul>
           </div>
           <div>
