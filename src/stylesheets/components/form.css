@@ -80,7 +80,7 @@ h1 {
   user-select: none;
   transition: all 0.25s cubic-bezier(0.4, 0, 1, 1); }
   .btn:focus, .btn:hover {
-    background-color: #ffc142;
+    background-color: #4169e1;
     box-shadow: 0 18px 35px rgba(50, 50, 93, 0.1), 0 8px 15px rgba(0, 0, 0, 0.07); }
   .btn:focus {
     outline: 0; }
