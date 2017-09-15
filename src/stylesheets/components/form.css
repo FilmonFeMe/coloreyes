@@ -33,14 +33,13 @@ h1 {
   .form-group + .form-group {
     margin-top: 1rem; }
 
-label {
+.form-label {
   display: inline-block;
   margin-bottom: .5rem;
-  font-size: .75rem;
-  touch-action: manipulation; }
+  font-size: .75rem;}
 
-input,
-textarea {
+.form-input,
+.form-textarea {
   display: block;
   padding: .5rem .75rem;
   width: 100%;
@@ -61,7 +60,7 @@ textarea {
     outline: 0;
     border-bottom-color: #ffab00; }
 
-textarea {
+.form-textarea {
   resize: vertical; }
 
 .btn {
