@@ -13,11 +13,11 @@ class Result extends Component {
       score: (this.props.numCorrect - 1)/(this.props.numberOfQuestions - 1),
       disclaimer: "*This test result is not a diagnosis. Only an optometrist is fit to evaluate your visual acuity.",
       errorMessage: "The answer provided indicates difficulty viewing and/or interpreting the illustration.",
-      severe: "Severe difficulty in identifying the patters. You're probably color blind.",
-      moderate: "Moderate difficulty in identifying the patters. You might be red or green color blind.",
-      mild: "Mild difficulty in identifying the patters. It's possible that you are red or green color blind.",
-      normal: "You have a normal ability to distinguish between red and green colors.",
-      perfect: "Perfect score! Your visual acuity is higher than the avarege!"
+      severe: "Severe difficulty in identifying the patterns. You may be color blind.",
+      moderate: "Exhibiting moderate difficulty with identifying the patterns. You may be red or green color blind.",
+      mild: "Exhibiting a mild difficulty identifying the patterns. You may be red or green color blind.",
+      normal: "You have demonstrated a normal ability to distinguish between red and green colors.",
+      perfect: "Perfect score! Your visual acuity is higher than the average!"
     };
   }
 
