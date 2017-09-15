@@ -16,3 +16,23 @@ module.exports = {
     }]
   }
 }
+
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+module.exports = {
+    // ...
+    module: {
+        loaders: [
+            // ...
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract('css!sass')
+            }
+        ]
+    },
+    plugins: [
+        new ExtractTextPlugin('public/style.css', {
+            allChunks: true
+        })
+    ]
+}
