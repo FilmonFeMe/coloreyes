@@ -7,10 +7,10 @@ class ReactFormLabel extends Component {
   constructor() {
     super();
   }
-  
+
   render() {
     return(
-      <label htmlFor={this.props.htmlFor}>{this.props.title}</label>
+      <label className="form-label" htmlFor={this.props.htmlFor}>{this.props.title}</label>
     )
   }
 }
@@ -26,7 +26,7 @@ class ReactForm extends Component {
       message: ''
     }
   }
-  
+
   handleChange = (e) => {
     let newState = {};
 
@@ -34,7 +34,7 @@ class ReactForm extends Component {
 
     this.setState(newState);
   };
-  
+
   handleSubmit = (e, message) => {
     let formData = {
       formSender: this.state.name,
@@ -46,7 +46,7 @@ class ReactForm extends Component {
     if (formData.formSender.length < 1 || formData.formEmail.length < 1 || formData.formSubject.length < 1 || formData.formMessage.length < 1) {
       return false;
     }
- 
+
     this.setState({
       name: '',
       email: '',
@@ -64,25 +64,25 @@ class ReactForm extends Component {
 
           <input id='formName' className='form-input' name='name' type='text' ref='formName' required onChange={this.handleChange} value={this.state.name} />
         </fieldset>
-        
+
         <fieldset className='form-group'>
           <ReactFormLabel htmlFor='formEmail' title='Email:' />
 
           <input id='formEmail' className='form-input' name='email' type='email' required onChange={this.handleChange} value={this.state.email} />
         </fieldset>
-        
+
         <fieldset className='form-group'>
           <ReactFormLabel htmlFor='formSubject' title='Subject:'/>
 
           <input id='formSubject' className='form-input' name='subject' type='text' required onChange={this.handleChange} value={this.state.subject} />
         </fieldset>
-        
+
         <fieldset className='form-group'>
           <ReactFormLabel htmlFor='formMessage' title='Message:' />
 
           <textarea id='formMessage' className='form-textarea' name='message' required onChange={this.handleChange}></textarea>
         </fieldset>
-        
+
         <div className='form-group'>
           <input id='formButton' className='btn' type='submit' placeholder='Send message' />
         </div>

@@ -61,9 +61,10 @@
   -webkit-column-count: 3;
   -moz-column-count: 3;
   column-count: 3;
+  font-size: 14px;
 }
 
-@media (max-width: 640px)
+@media (max-width: 830px)
 {
   #viewOptions
   {
