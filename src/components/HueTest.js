@@ -66,21 +66,29 @@ class HueTest extends Component {
     var score1=0, score2=0, score3=0, score4 = 0;
     for(var i=0; i < this.state.row1.length; i++){
       if(hues1[i] == this.state.row1[i]){
+        score1 += 2;
+      }else if(hues1[i] == (this.state.row1[i-1] || this.state.row1[i+1])) {
         score1++;
       }
     }
     for(var i=0; i < this.state.row2.length; i++){
       if(hues2[i] == this.state.row2[i]){
+        score2 += 2;
+      }else if(hues2[i] == (this.state.row2[i-1] || this.state.row2[i+1])) {
         score2++;
       }
     }
     for(var i=0; i < this.state.row3.length; i++){
       if(hues3[i] == this.state.row3[i]){
+        score3 += 2;
+      }else if(hues3[i] == (this.state.row3[i-1] || this.state.row3[i+1])) {
         score3++;
       }
     }
     for(var i=0; i < this.state.row4.length; i++){
       if(hues4[i] == this.state.row4[i]){
+        score4 += 2;
+      }else if(hues4[i] == (this.state.row4[i-1] || this.state.row4[i+1])) {
         score4++;
       }
     }
