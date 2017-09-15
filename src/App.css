@@ -32,7 +32,7 @@ nav {
 
 h1 {
   margin-top: 0;
-  margin-bottom: 3.236rem;
+  margin-bottom: 2.236rem;
   text-align: center;
   font-size: 1.618rem; }
 
@@ -367,6 +367,12 @@ M  E  D  I  A    Q  U  E  R  I  E  S
   width: 350px; /* this is a hack, fix back to 700 and get the phone version to be this */
 }
 
+.hue-result-chart{
+  display: flex;
+  justify-content: center;
+  margin-top: -50px;
+}
+
 
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 /*   SOCIAL MEDIA CSS   */
@@ -438,6 +444,7 @@ button:active, button:focus, button:hover {
     background-image: none;
     outline: 0;
     background-color:#0a3dd6;
+    box-shadow: 0 18px 35px rgba(50, 50, 93, 0.1), 0 8px 15px rgba(0, 0, 0, 0.07);
 }
 
 input[type=button], input[type=submit] {
@@ -463,6 +470,7 @@ input[type=button]:active, input[type=button]:focus, input[type=button]:hover, i
     background-image: none;
     outline: 0;
     background-color:#0a3dd6;
+    box-shadow: 0 18px 35px rgba(50, 50, 93, 0.1), 0 8px 15px rgba(0, 0, 0, 0.07);
   }
 
 a:link, a:visited {

@@ -11,7 +11,9 @@ class HueResult extends Component {
       return (
         <div className="hue-results">
           <h1>Results</h1>
-          <Chart {...this.props}/>
+          <div className="hue-result-chart">
+            <Chart {...this.props}/>
+          </div>
           <div id="hue-interpretation">
             <h2>Results interpretation:</h2>
             <p>The chart above represents your general visual acuity for distinguishing between shades of Red, Blue, Green and Yellow.
