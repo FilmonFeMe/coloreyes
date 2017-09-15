@@ -7,18 +7,9 @@ class NavComponent extends Component{
 
 	render() {
 		return (
-
-
-			<nav className="navbar navbar-default">
+			<div>
+			<nav id="nb" className="navbar">
 			<div className="container">
-				<div className="navbar-header">
-					{/* <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-						<span className="icon-bar"></span>
-						<span className="icon-bar"></span>
-						<span className="icon-bar"></span>                        
-					</button> */}
-					<a className="navbar-brand" href="#">LOGO</a>
-				</div>
 				<div className="collapse navbar-collapse" id="myNavbar">
 					<ul className="nav navbar-nav navbar-right">
 					<li><Link to="/">HOME</Link></li>
@@ -29,6 +20,8 @@ class NavComponent extends Component{
 				</div>
 			</div>
 		</nav>
+		<div id="eye-logo"><Logo/><h1 id="lh1">ColorEyes</h1></div>
+		</div>
 		);
 	}
 }
