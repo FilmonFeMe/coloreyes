@@ -1,3 +1,15 @@
+.quiz-layout{
+	margin-top: 25%;
+}
 #numpad{
 	position: relative;
+}
+#progress-container{
+	height: 100%;
+}
+#progress{
+	height: 14%!important;
+}
+#numpad{
+	height: 14%;
 }

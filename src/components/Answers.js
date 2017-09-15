@@ -8,13 +8,16 @@ class Answers extends Component {
   }
 
   handleChange(event){
+    event.preventDefault();
     this.props.onAnswerClicked(event.target.value);
   }
 
   render(){
     return (
       <div className ="answer-form">
-        <label>Select an option: </label><br/><br/>
+      <div id="label-id">
+        <label>Select an option: </label><br/>
+        </div>
         <ul className="options">
           {[1,4,7,2,5,8,3,6,9].map((i) =>
             <li key={i}>

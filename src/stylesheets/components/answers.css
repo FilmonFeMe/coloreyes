@@ -1,5 +1,9 @@
 .answer-form{
 	position : absolute;
-	top: 10%;
+	top: 5%;
 	left: 29%;
+}
+
+#label-id{
+	padding-top: 10%;
 }
