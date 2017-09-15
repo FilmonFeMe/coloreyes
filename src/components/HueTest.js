@@ -11,11 +11,11 @@ const SortableList = SortableContainer(({row, firstBox, lastBox}) => {
   return (
     <div style={{"display":"inline-block"}}>
       <div className="SortableList">
-      <div className="SortableItem" style={{"backgroundColor":firstBox,"marginBottom":"5px"}}></div>
+      <div className="SortableItem" style={{"backgroundColor":firstBox,"marginBottom":"0px"}}></div>
         {row.map((value, index) => (
           <SortableItem key={`item-${index}`} index={index} value={value} />
         ))}
-      <div className="SortableItem" style={{"backgroundColor":lastBox,"marginTop":"5px"}}></div>        
+      <div className="SortableItem" style={{"backgroundColor":lastBox,"marginTop":"0px"}}></div>        
       </div>
     </div>
   );
