@@ -58,7 +58,7 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {
-    "resolve-url-loader": "^2.1.0"
+    "resolve-url-loader": "^3.0.0"
   },
   "jest": {
     "collectCoverageFrom": [
